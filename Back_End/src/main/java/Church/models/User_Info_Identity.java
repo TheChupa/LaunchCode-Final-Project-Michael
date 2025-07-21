@@ -21,7 +21,7 @@ public class User_Info_Identity {
     private String ssnLast4;
     private String passPortNum;
 
-    @OneToOne(mappedBy = "User_Info_Identity")
+    @OneToOne(mappedBy = "identity")
     private User_Info user_info;
 
     public User_Info_Identity() {};
