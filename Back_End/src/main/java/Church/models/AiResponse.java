@@ -15,7 +15,7 @@ public class AiResponse {
    private String financialResponse;
    private String socialResponse;
 
-   @OneToOne(mappedBy = "AiReponse")
+   @OneToOne(mappedBy = "AiResponse")
    private User_Info userInfo;
 
     public AiResponse(){}

@@ -14,31 +14,34 @@ public class User_Info {
     @JoinColumn(name = "id")
     private User user;
 
-   @OneToOne(cascade =  CascadeType.ALL)
-   @JoinColumn(name = "identity_id", referencedColumnName = "id")
-   private User_Info_Identity identity;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "identity_id", referencedColumnName = "id")
+    private User_Info_Identity identity;
 
-   @OneToOne(cascade = CascadeType.ALL)
-   @JoinColumn(name = "social_id", referencedColumnName = "id")
-   private User_Info_Social social;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "social_id", referencedColumnName = "id")
+    private User_Info_Social social;
 
-   @OneToOne(cascade = CascadeType.ALL)
-   @JoinColumn(name = "financial_id", referencedColumnName = "id")
-   private User_Info_Financial financial;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "financial_id", referencedColumnName = "id")
+    private User_Info_Financial financial;
 
-   @OneToOne(cascade = CascadeType.ALL)
-   @JoinColumn(name="AiResponse_id", referencedColumnName = "id")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "AiResponse_id", referencedColumnName = "id")
     private AiResponse AiResponse;
 
-   public User_Info() {}
+    public User_Info() {
+    }
 
-   public User_Info(User user, User_Info_Identity identity, User_Info_Social social, User_Info_Financial financial) {
-       this.user = user;
-       this.identity = identity;
-       this.social = social;
-       this.financial = financial;
+    public User_Info(User user, User_Info_Identity identity, User_Info_Social social, User_Info_Financial financial, AiResponse AiResponse) {
+        this.user = user;
+        this.identity = identity;
+        this.social = social;
+        this.financial = financial;
+        this.AiResponse = AiResponse;
 
-   }
+
+    }
 
     public int getId() {
         return id;
@@ -74,5 +77,9 @@ public class User_Info {
 
     public void setFinancial(User_Info_Financial financial) {
         this.financial = financial;
+    }
+
+    public AiResponse getAiResponse() {
+        return AiResponse;
     }
 }
