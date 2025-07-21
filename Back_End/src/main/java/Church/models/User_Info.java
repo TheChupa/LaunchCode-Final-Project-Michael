@@ -23,16 +23,21 @@ public class User_Info {
    private User_Info_Social social;
 
    @OneToOne(cascade = CascadeType.ALL)
-   @JoinColumn(name = "fiancial_id", referencedColumnName = "id")
+   @JoinColumn(name = "financial_id", referencedColumnName = "id")
    private User_Info_Financial financial;
 
-   public User_Info() {};
+   @OneToOne(cascade = CascadeType.ALL)
+   @JoinColumn(name="AiResponse_id", referencedColumnName = "id")
+    private AiResponse AiResponse;
+
+   public User_Info() {}
 
    public User_Info(User user, User_Info_Identity identity, User_Info_Social social, User_Info_Financial financial) {
        this.user = user;
        this.identity = identity;
        this.social = social;
        this.financial = financial;
+
    }
 
     public int getId() {

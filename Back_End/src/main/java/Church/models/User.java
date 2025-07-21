@@ -1,11 +1,10 @@
 package Church.models;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.Objects;
 
+@Entity
 public class User {
 
 
@@ -16,14 +15,18 @@ public class User {
     private String username;
     private String password;
 
-    //TODO: ADD JSON REFERENCES
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private User_Info userInfo;
+
+
+    public User() {
+    }
 
     public User(String username, String password) {
         this.username = username;
         this.password = password;
     }
 
-    public User(){};
 
     public String getUsername() {
         return username;
@@ -49,6 +52,7 @@ public class User {
     public String toString() {
         return username + " " + password;
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
