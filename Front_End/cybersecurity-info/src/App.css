@@ -1,0 +1,376 @@
+.bg-myColorNavBar {
+  background: radial-gradient(
+    circle at 69% 74%,
+    #079b22,
+    #0fd70d,
+    rgba(91, 240, 54, 1)
+  );
+}
+.bg-myColorFooter {
+  background: radial-gradient(
+    circle at 50% 50%,
+    #ff0037,
+    rgba(255, 144, 168, 1),
+    rgba(89, 68, 72, 1)
+  );
+}
+
+
+
+/*HomePage*/
+
+.homepage {
+
+ display: grid;
+ grid-template-columns: 20px 1fr 2.4fr 1fr 20px;
+  grid-template-rows: 80px 0.2fr 1.8fr 80px 2.2fr 0.3fr 80px;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  justify-content: stretch;
+  grid-template-areas:
+    ". . . . ."
+    ". . . . ."
+    ". . intro-to-home . ."
+    ". . . . ."
+    ". . lead-to-buttons-homepage . ."
+    ". blue-button-homepage . red-button-homepage ."
+    ". . . . .";
+    border: 20px inset #188547;
+
+}
+
+.red-button-homepage {
+  grid-area: red-button-homepage;
+ position: absolute;
+  right: 0;
+  bottom: 5;
+  align-self: end;
+  background-color:#cd081b;
+  padding: 25px 25px;
+  border-radius: 10px;
+}
+
+.blue-button-homepage {
+
+  background-color: #031fc0;
+  padding: 25px 25px;
+  border-radius: 10px;
+
+  grid-area: blue-button-homepage;
+  position: absolute;
+  left: 0;
+  bottom: 5;
+  align-self: start;
+}
+
+.lead-to-buttons-homepage {
+  grid-area: lead-to-buttons-homepage;
+  border: outset #2d7842;
+  align-self: start; 
+}
+
+.intro-to-home {
+  grid-area: intro-to-home;
+   border: outset #2d7842;
+  
+}
+
+/* Blinking Text */
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.homepage-blink {
+
+  font-size: 30px;
+  color: green;
+  animation: blink 1.5s infinite;
+}
+
+.table-blink{
+  color:red;
+  animation: blink 2.0s infinite;
+}
+
+
+.blue-button-homepage:hover {
+  animation: flash-blue .3s infinite;
+}
+.red-button-homepage:hover{
+  animation: flash-red .3s infinite;
+}
+
+.welcome-button{
+
+   background-color:#2d7842;
+  padding: 25px 25px;
+  border-radius: 10px;
+  justify-content: center;
+
+}
+.welcome-button:hover {
+  animation: flash-green .5s infinite;
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color:green(0, 0, 0, 0.4); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; 
+}
+.username-box {
+  background: white;
+  width: 100vw;
+  height:100vh;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+/* About Me Page */
+
+.about-me {
+display: flex; 
+flex-direction: column; 
+align-items: center; 
+justify-content: flex-start; 
+border: 20px inset #188547; 
+}
+.text-about-me {
+width: 100%; 
+margin: 0; 
+}
+.form-about-me {
+width: 100%; 
+margin: 0; 
+}
+.closer-about-me {
+width: 100%; 
+margin: 0; 
+}
+
+
+
+.dog-photo {
+  width: 200px;
+  height: 200px;
+  justify-content: center;
+}
+
+/* Resources page */
+
+.resources-page {
+  display: grid;
+  grid-template-columns: 1.3fr 1.4fr;
+  grid-template-rows: 0.5fr 1.4fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "title-resources title-resources"
+    "wiki-resources serious-resources";
+border: 20px inset #188547;
+}
+
+.title-resources {
+  grid-area: title-resources;
+  border: 10px outset #2d7842;
+  display: flex;
+  align-content: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.wiki-resources {
+  grid-area: wiki-resources;
+  border: 10px outset #2d7842;
+  align-content: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.serious-resources {
+  grid-area: serious-resources;
+  border: 10px outset #2d7842;
+  align-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.resources-button{
+  background-color:#2d7842;
+  padding: 25px 25px;
+  border-radius: 10px;
+  justify-content: center;
+
+}
+
+.resources-button:hover{
+  animation: flash-green .3s infinite;
+}
+
+.thank-you {
+  background-image: url(../ThankYou.jpg);
+
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/*Cyber Audit Landing*/
+.cyber-audit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  flex-direction: column;
+}
+
+/* Training Room and Scam info cards*/
+
+.info-card {
+  border: 5px black;
+}
+
+.scamtype {  display: grid;
+  grid-template-columns: 15% 0.9fr 15%;
+  grid-template-rows: 15% 1fr 1fr 5%;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . ."
+    ". scam-1 ."
+    ". button-box ."
+    ". . .";
+}
+
+.scam-1 {
+  grid-area: scam-1;
+  border: 15px outset #2d7842;
+  
+  background-color: white;
+  color: #fff;              
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+}
+
+.button-box { 
+  grid-area: button-box;
+  border: 10px outset #2d7842;
+  display: flex;
+  align-items: flex;       
+  justify-content: top; 
+  text-align: center;
+  align-self: flex-start;
+  background-color: yellow;
+  justify-self: center;
+}
+
+
+
+.training-room{
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  background-image: url("../matrixship.jpg");
+  background-position: stretch;
+  background-size: cover;
+}
+.training-gif{
+  padding: 150px;
+  border: 20px inset #188547;
+  background-color: white;
+}
+.dropdown {
+border: 20px outset green;
+background-color: white;
+padding: 15px;
+}
+.info-card{
+  font-size: xx-small ;
+}
+
+.dojo{
+background-image: url(../dojobackground.jpg);
+opacity: 7;
+background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+
+}
+
+.center-button {
+  justify-content: center
+}
+
+.table-div{
+  border: 20px inset #188547;
+}
+
+
+/* hover effects for all buttons */
+
+@keyframes flash-green {
+  0%   { background-color: #2d7842; }
+  50%  { background-color: #4CAF50; } 
+  100% { background-color: #2d7842; }
+}
+
+@keyframes flash-red {
+  0%   { background-color: #cd081b; }
+  50%  { background-color: #f77d85; } 
+  100% { background-color:  #cd081b; }
+}
+
+@keyframes flash-blue {
+  0%   { background-color: #031fc0; }
+  50%  { background-color: #0f8192; } 
+  100% { background-color:  #031fc0; }
+}
+
+
+
+

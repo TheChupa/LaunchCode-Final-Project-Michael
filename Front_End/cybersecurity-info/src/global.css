@@ -1,0 +1,27 @@
+
+main {
+    background-color: #ACD1AF;
+
+    background-size: cover;
+	color: #333;
+	font-size:2rem;
+	margin: 0;
+    margin-bottom:15px;
+	padding: 35px;
+	box-sizing: border-box;
+}
+
+@media screen and (min-width: 925px) {
+	main {
+        font-size: 1.1rem ;
+        margin-bottom: 30px ;
+    }
+}
+
+@media screen and (max-width: 500px) {
+	main {
+        font-size:  1rem;
+        margin-bottom: 50px;
+
+    }
+}
