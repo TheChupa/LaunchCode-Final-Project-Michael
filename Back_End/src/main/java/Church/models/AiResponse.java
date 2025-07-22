@@ -1,5 +1,6 @@
 package Church.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -16,6 +17,7 @@ public class AiResponse {
    private String socialResponse;
 
    @OneToOne(mappedBy = "aiResponse")
+   @JsonBackReference
    private User_Info userInfo;
 
     public AiResponse(){}

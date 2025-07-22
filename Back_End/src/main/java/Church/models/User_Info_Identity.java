@@ -1,5 +1,6 @@
 package Church.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -22,6 +23,7 @@ public class User_Info_Identity {
     private String passPortNum;
 
     @OneToOne(mappedBy = "identity")
+    @JsonBackReference
     private User_Info user_info;
 
     public User_Info_Identity() {};

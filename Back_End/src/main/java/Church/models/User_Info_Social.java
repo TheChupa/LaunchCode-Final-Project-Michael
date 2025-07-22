@@ -1,5 +1,6 @@
 package Church.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -26,6 +27,7 @@ public class User_Info_Social {
     private String youtubeProfile;
 
     @OneToOne(mappedBy = "social")
+    @JsonBackReference
     private User_Info user_info;
 
     public User_Info_Social() {

@@ -1,5 +1,6 @@
 package Church.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -18,6 +19,7 @@ public class User_Info_Financial {
     private String cryptoHoldings;
 
     @OneToOne(mappedBy = "financial")
+    @JsonBackReference
     private User_Info user_info;
 
 

@@ -1,5 +1,6 @@
 package Church.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 
@@ -16,18 +17,22 @@ public class User_Info {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "identity_id", referencedColumnName = "id")
+    @JsonManagedReference
     private User_Info_Identity identity;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "social_id", referencedColumnName = "id")
+    @JsonManagedReference
     private User_Info_Social social;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "financial_id", referencedColumnName = "id")
+    @JsonManagedReference
     private User_Info_Financial financial;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ai_response_id", referencedColumnName = "id")
+    @JsonManagedReference
     private AiResponse aiResponse;
 
     public User_Info() {
