@@ -27,18 +27,18 @@ public class User_Info {
     private User_Info_Financial financial;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "AiResponse_id", referencedColumnName = "id")
-    private AiResponse AiResponse;
+    @JoinColumn(name = "ai_response_id", referencedColumnName = "id")
+    private AiResponse aiResponse;
 
     public User_Info() {
     }
 
-    public User_Info(User user, User_Info_Identity identity, User_Info_Social social, User_Info_Financial financial, AiResponse AiResponse) {
+    public User_Info(User user, User_Info_Identity identity, User_Info_Social social, User_Info_Financial financial, AiResponse aiResponse) {
         this.user = user;
         this.identity = identity;
         this.social = social;
         this.financial = financial;
-        this.AiResponse = AiResponse;
+        this.aiResponse= aiResponse;
 
 
     }
@@ -54,6 +54,8 @@ public class User_Info {
     public void setUser(User user) {
         this.user = user;
     }
+
+
 
     public User_Info_Identity getIdentity() {
         return identity;
@@ -79,7 +81,11 @@ public class User_Info {
         this.financial = financial;
     }
 
+    public void setAiResponse(AiResponse aiResponse) {
+        this.aiResponse = aiResponse;
+    }
+
     public AiResponse getAiResponse() {
-        return AiResponse;
+        return aiResponse;
     }
 }

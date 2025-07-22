@@ -9,6 +9,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -29,11 +30,24 @@ public class UserController {
         return new ResponseEntity<>(allUsers, HttpStatus.OK); //200
     }
 
+
     @PostMapping(value = "/add", consumes= MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> createNewUser(@RequestBody UserDTO userNameData) {
 
         User user = new User(userNameData.getUsername(), userNameData.getPassword());
         userRepository.save(user);
         return new ResponseEntity<>(user, HttpStatus.CREATED); // 201
+    }
+
+    @DeleteMapping(value="/delete/{userId}", produces=MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> deleteUser(@PathVariable(value="userId") int userId) {
+        User currentUser = userRepository.findById(userId).orElse(null);
+        if(currentUser != null) {
+            userRepository.deleteById(userId);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT); // 204
+        } else {
+            String response = "User with ID of " + userId + " not found.";
+            return new ResponseEntity<>(Collections.singletonMap("response", response), HttpStatus.NOT_FOUND); // 404
+        }
     }
 }

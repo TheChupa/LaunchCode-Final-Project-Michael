@@ -44,6 +44,14 @@ public class User_Info_Identity {
         return id;
     }
 
+    public User_Info getUser_info() {
+        return user_info;
+    }
+
+    public void setUser_info(User_Info user_info) {
+        this.user_info = user_info;
+    }
+
     public String getPassPortNum() {
         return passPortNum;
     }

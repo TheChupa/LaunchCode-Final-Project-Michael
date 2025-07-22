@@ -3,18 +3,14 @@ package Church.models.dto;
 import Church.models.*;
 
 public class User_InfoDTO {
-    private User user;
+    private int userId;
     private User_Info_Identity identity;
     private User_Info_Social social;
     private User_Info_Financial financial;
     private AiResponse aiResponse;
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
+    public int getUserId() {
+        return userId;
     }
 
     public User_Info_Identity getIdentity() {
@@ -48,4 +44,5 @@ public class User_InfoDTO {
     public void setAiResponse(AiResponse aiResponse) {
         this.aiResponse = aiResponse;
     }
+
 }

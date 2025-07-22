@@ -46,6 +46,14 @@ public class User_Info_Social {
         this.youtubeProfile = youtubeProfile;
     }
 
+    public User_Info getUser_info() {
+        return user_info;
+    }
+
+    public void setUser_info(User_Info user_info) {
+        this.user_info = user_info;
+    }
+
     public int getId() {
         return id;
     }

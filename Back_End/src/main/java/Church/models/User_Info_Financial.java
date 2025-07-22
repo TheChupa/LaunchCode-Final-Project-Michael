@@ -26,6 +26,18 @@ public class User_Info_Financial {
         return venmoHandle;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public User_Info getUser_info() {
+        return user_info;
+    }
+
+    public void setUser_info(User_Info user_info) {
+        this.user_info = user_info;
+    }
+
     public void setVenmoHandle(String venmoHandle) {
         this.venmoHandle = venmoHandle;
     }
