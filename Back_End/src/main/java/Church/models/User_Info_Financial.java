@@ -13,8 +13,8 @@ public class User_Info_Financial {
     private String cashAppHandle;
     private String paypalEmail;
     private String bankName;
-    private String CCardNumber;
-    private String BankAccountNumber;
+    private String cCardNumber;
+    private String bankAccountNumber;
     private String cryptoHoldings;
 
     @OneToOne(mappedBy = "financial")
@@ -66,20 +66,20 @@ public class User_Info_Financial {
         this.bankName = bankName;
     }
 
-    public String getCCardNumber() {
-        return CCardNumber;
+    public String getcCardNumber() {
+        return cCardNumber;
     }
 
-    public void setCCardNumber(String CCardNumber) {
-        this.CCardNumber = CCardNumber;
+    public void setcCardNumber(String cCardNumber) {
+        this.cCardNumber = cCardNumber;
     }
 
-    public String getBankAccountNumber() {
-        return BankAccountNumber;
+    public String getbankAccountNumber() {
+        return bankAccountNumber;
     }
 
-    public void setBankAccountNumber(String bankAccountNumber) {
-        BankAccountNumber = bankAccountNumber;
+    public void setbankAccountNumber(String bankAccountNumber) {
+        bankAccountNumber = bankAccountNumber;
     }
 
     public String getCryptoHoldings() {

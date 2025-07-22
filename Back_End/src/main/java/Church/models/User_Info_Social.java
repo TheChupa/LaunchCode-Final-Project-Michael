@@ -26,7 +26,8 @@ public class User_Info_Social {
     private String youtubeProfile;
 
     @OneToOne(mappedBy = "social")
-    private User_Info user_info ;
+    private User_Info user_info;
+
     public User_Info_Social() {
     }
 

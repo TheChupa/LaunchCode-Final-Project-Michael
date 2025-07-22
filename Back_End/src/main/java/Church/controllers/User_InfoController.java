@@ -43,7 +43,7 @@ public class User_InfoController {
 
     }
 
-    @PostMapping(value = "add", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/add", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> createNewUserInfo(@RequestBody User_InfoDTO userInfoData) {
         User user = userRepository.findById(userInfoData.getUserId()).orElse(null);
         if (user == null)

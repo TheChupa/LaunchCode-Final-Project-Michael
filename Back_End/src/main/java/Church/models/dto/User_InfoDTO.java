@@ -21,6 +21,10 @@ public class User_InfoDTO {
         this.identity = identity;
     }
 
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
     public User_Info_Social getSocial() {
         return social;
     }

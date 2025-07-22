@@ -14,7 +14,7 @@ public class User_Info_Identity {
     private String address;
     private String zipCode;
     private String state;
-    private String DOB;
+    private String dob;
     private String phoneNumber;
     private String email;
     private String driversLicenceNum;
@@ -26,13 +26,13 @@ public class User_Info_Identity {
 
     public User_Info_Identity() {};
 
-    public User_Info_Identity(String firstName, String lastName, String address, String zipCode, String state, String DOB, String phoneNumber, String email, String driversLicenceNum, String ssnLast4, String passPortNum) {
+    public User_Info_Identity(String firstName, String lastName, String address, String zipCode, String state, String dob, String phoneNumber, String email, String driversLicenceNum, String ssnLast4, String passPortNum) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
         this.zipCode = zipCode;
         this.state = state;
-        this.DOB = DOB;
+        this.dob = dob;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.driversLicenceNum = driversLicenceNum;
@@ -93,11 +93,11 @@ public class User_Info_Identity {
     }
 
     public String getDOB() {
-        return DOB;
+        return dob;
     }
 
-    public void setDOB(String DOB) {
-        this.DOB = DOB;
+    public void setDOB(String dob) {
+        this.dob = dob;
     }
 
     public String getZipCode() {
