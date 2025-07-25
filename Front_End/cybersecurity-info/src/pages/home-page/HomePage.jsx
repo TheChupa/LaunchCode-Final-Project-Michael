@@ -27,24 +27,24 @@ const HomePage = () => {
 <div className="flex-container">
    <div className="flex-items">
     <HomePageCard
-   title="Title"
-   description="Description"/>
+   title="Click to Login"
+   description="Welcome New and Returning Users"/>
    </div>
    <div className="flex-items">
     <HomePageCard
-   title="Title"
-   description="Description"/>
+   title="AICyber Security Audit"
+   description="Enter"/>
    <HomePageCard
-   title="Title"
-   description="Description"/>
+   title="I'm here to learn on my own."
+   description=""/>
    </div>
    <div className="flex-items">
    <HomePageCard
-   title="Title"
-   description="Description"/>
+   title="Training Room"
+   description="Train with Morpheus"/>
    <HomePageCard
-   title="Title"
-   description="Description"/></div>
+   title="Contact the Creator"
+  /></div>
 </div>
 </div>
 

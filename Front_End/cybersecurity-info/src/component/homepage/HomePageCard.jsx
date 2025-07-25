@@ -6,8 +6,8 @@ const HomePageCard = ({ title, description,}) => {
 
         <div className="homepage-card">
            
-            <h6>{title}</h6>
-            <p>{description}</p>
+            <h2>{title}</h2>
+            <h3>{description}</h3>
            
         </div>
 
