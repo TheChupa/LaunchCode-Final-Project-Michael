@@ -1,6 +1,8 @@
 import { ReUsableButton } from "../../assets/utility";
-import { Link } from "react-router-dom";
+import { Link, UNSAFE_createClientRoutesWithHMRRevalidationOptOut } from "react-router-dom";
 import { useState } from "react";
+import ScamInfoBox from "../../component/training-room/ScamInfoBox";
+import HomePageCard from "../../component/homepage/HomePageCard";
 
 const HomePage = () => {
  const [userName, setUserName] = useState("");
@@ -21,7 +23,35 @@ const HomePage = () => {
  
   return (
     <>
-      <main className="homepage">
+<div className= "background">
+<div className="flex-container">
+   <div className="flex-items">
+    <HomePageCard
+   title="Title"
+   description="Description"/>
+   </div>
+   <div className="flex-items">
+    <HomePageCard
+   title="Title"
+   description="Description"/>
+   <HomePageCard
+   title="Title"
+   description="Description"/>
+   </div>
+   <div className="flex-items">
+   <HomePageCard
+   title="Title"
+   description="Description"/>
+   <HomePageCard
+   title="Title"
+   description="Description"/></div>
+</div>
+</div>
+
+
+
+
+     {/* <main className="homepage">
 
 <div className="overlay" hidden ={hideForm}>
  <div className="username-box">
@@ -47,7 +77,8 @@ const HomePage = () => {
 
 
 
-        <div className="intro-to-home">
+        <div className="flex-container">
+         <div className ="flex-items">
           <h2>
             {" "}
             When's the last time you checked on <b>your</b> online identity, <b><span>{userName}</span></b> ?
@@ -59,6 +90,7 @@ const HomePage = () => {
           <span className="homepage-blink">
             <b>Never?</b>
           </span>{" "}
+          </div>
           <br />
           <br />
           <br />
@@ -85,7 +117,7 @@ const HomePage = () => {
             <ReUsableButton path="/Audit" name="Hard Journey" />
           </span>
         </div>
-      </main>
+      </main> */}
     </>
   );
 };
