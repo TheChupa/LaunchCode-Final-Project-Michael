@@ -1,28 +1,7 @@
-import { ReUsableButton } from "../../assets/utility";
-import {
-  Link,
-  Navigate,
-  UNSAFE_createClientRoutesWithHMRRevalidationOptOut,
-  useNavigate,
-} from "react-router-dom";
-import { useState } from "react";
-import ScamInfoBox from "../../components/training-room/ScamInfoBox";
-import HomePageCard from "../../components/homepage/HomePageCard";
+import { useNavigate } from "react-router-dom";
+import HomePageCard from "../homepage/HomePageCard";
 
-const UserHomePage = () => {
-  const [userName, setUserName] = useState("");
-  const [hideForm, setHideForm] = useState(false);
-
-  const handleChange = (e) => {
-    setUserName(e.target.value);
-  };
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setHideForm(true);
-  };
-  const handleNameChange = () => {
-    setHideForm(false);
-  };
+const PublicHomePage = () => {
   const navigate = useNavigate();
 
   return (
@@ -31,8 +10,8 @@ const UserHomePage = () => {
         <div className="flex-container">
           <div className="flex-items">
             <HomePageCard
-              title="Click to Login"
-              description="Welcome New and Returning Users"
+              title="View Power Grid"
+              description="Find total megawatts of users"
               onClick={() => {
                 console.log("Button clicked!");
                 navigate("/resources/AllResources");
@@ -41,16 +20,16 @@ const UserHomePage = () => {
           </div>
           <div className="flex-items">
             <HomePageCard
-              title="AICyber Security Audit"
-              description="Enter"
+              title="How much is a battery worth?"
+              description="tie this to Darkweb things for sale using math"
               onClick={() => {
                 console.log("Button clicked!");
                 navigate("/Audit");
               }}
             />
             <HomePageCard
-              title="I'm here to learn on my own."
-              description=""
+              title="Make a Human Battery"
+              description="Gotta Keep the lights on!"
               onClick={() => {
                 console.log("Button clicked!");
                 navigate("/Audit");
@@ -59,15 +38,16 @@ const UserHomePage = () => {
           </div>
           <div className="flex-items">
             <HomePageCard
-              title="Training Room"
-              description="Train with Morpheus"
+              title="Modify Battery Farm"
+              description="Add, remove, or change users"
               onClick={() => {
                 console.log("Button clicked!");
                 navigate("/Audit");
               }}
             />
             <HomePageCard
-              title="Contact the Creator"
+              title="Power Off."
+              description={""}
               onClick={() => {
                 console.log("Button clicked!");
                 navigate("/Audit");
@@ -80,4 +60,4 @@ const UserHomePage = () => {
   );
 };
 
-export default UserHomePage;
+export default PublicHomePage;

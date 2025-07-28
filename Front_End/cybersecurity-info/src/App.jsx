@@ -1,5 +1,4 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import HomePage from "./pages/home-page/HomePage.jsx";
 import ResourcesPage from "./pages/ResourcesPage.jsx";
 import "./App.css";
 import AuditForm from "./components/cyber-audit/Audit.jsx";
@@ -10,6 +9,8 @@ import Footer from "./pages/home-page/Footer.jsx";
 import CyberTraining from "./components/training-room/TrainingRoom.jsx";
 import TrainingProgram from "./components/training-room/TrainingRoomProgram.jsx";
 import ThankYouPage from "./pages/about-me/ThankYouPage.jsx";
+import AdminHomePage from "./components/admin/AdminHomePage.jsx";
+import PublicHomePage from "./components/public/PublicHomePage.jsx";
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<AdminHomePage />} />
+          <Route path="/public" element={<PublicHomePage />} />
           <Route path="/resources/AllResources" element={<ResourcesPage />} />
           <Route path="/Audit" element={<AuditForm />} />
           <Route path="/AboutMe" element={<AboutMe />} />
