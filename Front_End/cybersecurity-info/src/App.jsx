@@ -2,13 +2,13 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import HomePage from "./pages/home-page/HomePage.jsx";
 import ResourcesPage from "./pages/ResourcesPage.jsx";
 import "./App.css";
-import AuditForm from "./component/cyber-audit/Audit.jsx";
+import AuditForm from "./components/cyber-audit/Audit.jsx";
 import AboutMe from "./pages/AboutMe.jsx";
 import NavBar from "./pages/home-page/Navbar.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./pages/home-page/Footer.jsx";
-import CyberTraining from "./component/training-room/TrainingRoom.jsx";
-import TrainingProgram from "./component/training-room/TrainingRoomProgram.jsx";
+import CyberTraining from "./components/training-room/TrainingRoom.jsx";
+import TrainingProgram from "./components/training-room/TrainingRoomProgram.jsx";
 import ThankYouPage from "./pages/about-me/ThankYouPage.jsx";
 
 function App() {
