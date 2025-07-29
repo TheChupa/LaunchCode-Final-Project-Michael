@@ -24,7 +24,7 @@ const AdminHomePage = () => {
               description="tie this to Darkweb things for sale using math"
               onClick={() => {
                 console.log("Button clicked!");
-                navigate("/Audit");
+                navigate("/Admin");
               }}
             />
             <HomePageCard
@@ -32,7 +32,7 @@ const AdminHomePage = () => {
               description="Gotta Keep the lights on!"
               onClick={() => {
                 console.log("Button clicked!");
-                navigate("/Audit");
+                navigate("/Admin");
               }}
             />
           </div>
@@ -42,7 +42,7 @@ const AdminHomePage = () => {
               description="Add, remove, or change users"
               onClick={() => {
                 console.log("Button clicked!");
-                navigate("/Audit");
+                navigate("/Admin");
               }}
             />
             <HomePageCard
@@ -50,7 +50,7 @@ const AdminHomePage = () => {
               description={""}
               onClick={() => {
                 console.log("Button clicked!");
-                navigate("/Audit");
+                navigate("/");
               }}
             />
           </div>

@@ -14,7 +14,7 @@ const LandingPage = () => {
               description=""
               onClick={() => {
                 console.log("Button clicked!");
-                navigate("/resources/AllResources");
+                navigate("/log-in/returning");
               }}
             />
           </div>
@@ -24,7 +24,7 @@ const LandingPage = () => {
               description=""
               onClick={() => {
                 console.log("Button clicked!");
-                navigate("/Audit");
+                navigate("/log-in/new-user");
               }}
             />
             <HomePageCard
@@ -42,7 +42,7 @@ const LandingPage = () => {
               description=""
               onClick={() => {
                 console.log("Button clicked!");
-                navigate("/Audit");
+                navigate("/AboutMe");
               }}
             />
             <HomePageCard

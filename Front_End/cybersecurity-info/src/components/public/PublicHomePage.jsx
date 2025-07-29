@@ -42,7 +42,7 @@ const PublicHomePage = () => {
               description=""
               onClick={() => {
                 console.log("Button clicked!");
-                navigate("/Audit");
+                navigate("/AboutMe");
               }}
             />
             <HomePageCard
@@ -50,7 +50,7 @@ const PublicHomePage = () => {
               description={"Log-Out"}
               onClick={() => {
                 console.log("Button clicked!");
-                navigate("/Audit");
+                navigate("/");
               }}
             />
           </div>
