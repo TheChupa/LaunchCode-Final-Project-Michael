@@ -12,8 +12,15 @@ public class User_Info_AiResponse {
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private int id;
 
+@Lob
+@Column(name="identity_response", columnDefinition = "TEXT")
    private String identityResponse;
+@Lob
+@Column(name="financial_response", columnDefinition = "TEXT")
    private String financialResponse;
+
+@Lob
+@Column(name="social_response", columnDefinition = "TEXT")
    private String socialResponse;
 
    @OneToOne(mappedBy = "aiResponse")
