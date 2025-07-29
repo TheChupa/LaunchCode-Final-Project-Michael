@@ -32,6 +32,12 @@ public class User_InfoController {
     User_InfoRepository userInfoRepository;
 
 
+    @GetMapping(value="/details", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> getAllUserInfo() {
+        List<User_Info> allUserInfo = userInfoRepository.findAll();
+        return new ResponseEntity<>(allUserInfo, HttpStatus.OK); //200
+    }
+
     @GetMapping(value = "/details/{User_InfoId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> getUserInfoById(@PathVariable(value = "User_InfoId") int User_InfoId) {
         User_Info currentUserInfo = userInfoRepository.findById(User_InfoId).orElse(null);
