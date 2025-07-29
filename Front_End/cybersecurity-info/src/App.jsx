@@ -15,8 +15,110 @@ import UserHomePage from "./components/user/UserHomePage.jsx";
 import LandingPage from "./components/landing-login/LandingPage.jsx";
 import LoginPageNew from "./components/landing-login/LoginPageNew.jsx";
 import LoginPageReturning from "./components/landing-login/LoginPageReturning.jsx";
+import { useState } from "react";
+
 
 function App() {
+
+const [loading, setLoading] = useState(true);
+const [loggedIn, setLoggedIn] = useState(false);
+
+// TEMP until auth is implemented
+const[allFinancial, setAllFinancial] = useState([]);
+const[allSocial, setAllSocial] = useState([]);
+const[allIdentity, setAllIdentity] = useState([]);
+const[allAiResponse, setAllAiResponse] = useState([]);
+const[allUser, setAllUser] = useState([]);
+const[allUserInfo, setAllUserInfo] = useState([]);
+
+
+  const fetchUsersInfo = async () => {
+  try {
+    let response = await fetch(`http://localhost:8080/api/user_info/details`);
+    let data = await response.json();
+
+    let financials = [];
+    let socials = [];
+    let identities = [];
+    let aiResponses = [];
+    let users = [];
+    let userInfos = [];
+
+    data.forEach(userInfo => {
+      let financial = new Financial(
+        userInfo.financial.id,
+        userInfo.financial.venmoHandle,
+        userInfo.financial.cashAppHandle,
+        userInfo.financial.paypalHandle,
+        userInfo.financial.bankName,
+        userInfo.financial.creditCardNum,
+        userInfo.financial.bankAccountNum,
+        userInfo.financial.cryptoHoldings
+      );
+
+      let social = new Social(
+        userInfo.social.id,
+        userInfo.social.motherMaidenName,
+        userInfo.social.fatherMiddleName,
+        userInfo.social.firstVehicle,
+        userInfo.social.numOfSiblings,
+        userInfo.social.elementarySchool,
+        userInfo.social.firstPetsName,
+        userInfo.social.linkedInProfile,
+        userInfo.social.facebookProfile,
+        userInfo.social.twitterProfile,
+        userInfo.social.tiktokHandle,
+        userInfo.social.snapchatProfile,
+        userInfo.social.youtubeProfile
+      );
+
+      let identity = new Identity(
+        userInfo.identity.id,
+        userInfo.identity.firstName,
+        userInfo.identity.lastName,
+        userInfo.identity.address,
+        userInfo.identity.zipCode,
+        userInfo.identity.state,
+        userInfo.identity.dob,
+        userInfo.identity.phoneNumber,
+        userInfo.identity.email,
+        userInfo.identity.driversLicenceNum,
+        userInfo.identity.ssnLast4,
+        userInfo.identity.passPortNum
+      );
+
+      let user = new User(
+        userInfo.user.id,
+        userInfo.user.username,
+        userInfo.user.password
+      );
+
+      let aiResponse = new AiResponse(
+        userInfo.aiResponse.id,
+        userInfo.aiResponse.identityResponse,
+        userInfo.aiResponse.financialResponse,
+        userInfo.aiResponse.socialResponse
+      );
+
+      userInfos.push(userInfo);
+      users.push(user);
+      financials.push(financial);
+      socials.push(social);
+      identities.push(identity);
+      aiResponses.push(aiResponse);
+    });
+    setAllUser(users);
+    setAllFinancial(financials);
+    setAllSocial(socials);
+    setAllIdentity(identities);
+    setAllAiResponse(aiResponses);
+    setAllUserInfo(data);
+  } catch (error) {
+    console.error("Error fetching user info:", error);
+  } finally {
+    setLoading(false);
+  }
+};
   return (
     <>
       <BrowserRouter>
