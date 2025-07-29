@@ -165,5 +165,26 @@ public class User_Info_Social {
     public void setYoutubeProfile(String youtubeProfile) {
         this.youtubeProfile = youtubeProfile;
     }
+
+    @Override
+    public String toString() {
+        return "User_Info_Social{" +
+                "id=" + id +
+                ", motherMaidenName='" + motherMaidenName + '\'' +
+                ", fatherMiddleName='" + fatherMiddleName + '\'' +
+                ", firstVehicle='" + firstVehicle + '\'' +
+                ", numOfSiblings=" + numOfSiblings +
+                ", elementarySchool='" + elementarySchool + '\'' +
+                ", firstPetsName='" + firstPetsName + '\'' +
+                ", linkedInProfile='" + linkedInProfile + '\'' +
+                ", facebookProfile='" + facebookProfile + '\'' +
+                ", instagramProfile='" + instagramProfile + '\'' +
+                ", twitterProfile='" + twitterProfile + '\'' +
+                ", tiktokHandle='" + tiktokHandle + '\'' +
+                ", snapchatProfile='" + snapchatProfile + '\'' +
+                ", youtubeProfile='" + youtubeProfile + '\'' +
+                ", user_info=" + user_info +
+                '}';
+    }
 }
 

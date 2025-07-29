@@ -6,6 +6,8 @@ import Church.models.dto.User_InfoDTO;
 import Church.repositories.AiResponseRepository;
 import Church.repositories.UserRepository;
 import Church.repositories.User_InfoRepository;
+import com.google.genai.Client;
+import com.google.genai.types.GenerateContentResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.graphql.GraphQlProperties;
 import org.springframework.http.HttpStatus;
@@ -49,34 +51,64 @@ public class User_InfoController {
         if (user == null)
             return new ResponseEntity<>(Collections.singletonMap("response", "User not found"), HttpStatus.NOT_FOUND);
 
-
         User_Info user_info = new User_Info();
         user_info.setUser(user);
 
-        if (userInfoData.getFinancial() != null) {
-            User_Info_Financial financial = userInfoData.getFinancial();
-            financial.setUser_info(user_info);
-            user_info.setFinancial(financial);
+        // Prepare a single AI response object
+        User_Info_AiResponse aiResponse = new User_Info_AiResponse();
 
-            // TODO: Add logic to make an LLM API call to generate prompt to keep you safer fop each of these save them to the Airesponse REPO
+        try {
+            Client client = new Client();
 
+            if (userInfoData.getFinancial() != null) {
+                User_Info_Financial financial = userInfoData.getFinancial();
+                financial.setUser_info(user_info);
+                user_info.setFinancial(financial);
+
+                GenerateContentResponse response = client.models.generateContent(
+                        "gemini-2.0-flash-001",
+                        "Pretend you are Morpheus from the Matrix, but you're the Head of an exasperated Infosec team teaching the corporate underlings to be safe online. You have gathered the following information " + financial.toString() + ". Create some advice based on this data and how to keep them safe online in 2025. Keep it under 2000 characters", null);
+                String aiText = response.text();
+
+                aiResponse.setFinancialResponse(aiText);
+            }
+
+            if (userInfoData.getSocial() != null) {
+                User_Info_Social social = userInfoData.getSocial();
+                social.setUser_info(user_info);
+                user_info.setSocial(social);
+
+                GenerateContentResponse response = client.models.generateContent(
+                        "gemini-2.0-flash-001",
+                        "Pretend you are Morpheus from the Matrix, but you're the Head of an exasperated Infosec team teaching the corporate underlings to be safe online. You have gathered the following information " + social.toString() + ". Create some advice based on this data and how to keep them safe online in 2025. Keep it under 2000 characters", null);
+                String aiText = response.text();
+
+                aiResponse.setSocialResponse(aiText);
+            }
+
+            if (userInfoData.getIdentity() != null) {
+                User_Info_Identity identity = userInfoData.getIdentity();
+                identity.setUser_info(user_info);
+                user_info.setIdentity(identity);
+
+                GenerateContentResponse response = client.models.generateContent(
+                        "gemini-2.0-flash-001",
+                        "Pretend you are Morpheus from the Matrix, but you're the Head of an exasperated Infosec team teaching the corporate underlings to be safe online. You have gathered the following information " + identity.toString() + ". Create some advice based on this data and how to keep them safe online in 2025. Keep it under 2000 characters", null);
+                String aiText = response.text();
+
+                aiResponse.setIdentityResponse(aiText);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ResponseEntity<>(Collections.singletonMap("response", "Error generating AI response"), HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
-        if (userInfoData.getSocial() != null) {
-            User_Info_Social social = userInfoData.getSocial();
-            social.setUser_info((user_info));
-            user_info.setSocial(social);
-        }
+        // Save only once after all responses are populated
 
-        if (userInfoData.getIdentity() != null) {
-            User_Info_Identity identity = userInfoData.getIdentity();
-            identity.setUser_info(user_info);
-            user_info.setIdentity(identity);
-        }
-
-
+        aiResponseRepository.save(aiResponse);
+        user_info.setAiResponse(aiResponse);
         userInfoRepository.save(user_info);
-
 
         return new ResponseEntity<>(user_info, HttpStatus.CREATED);
     }

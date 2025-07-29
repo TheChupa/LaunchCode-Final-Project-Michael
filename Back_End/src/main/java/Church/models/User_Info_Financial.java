@@ -92,4 +92,18 @@ public class User_Info_Financial {
         this.cryptoHoldings = cryptoHoldings;
     }
 
+    @Override
+    public String toString() {
+        return "User_Info_Financial{" +
+                "id=" + id +
+                ", venmoHandle='" + venmoHandle + '\'' +
+                ", cashAppHandle='" + cashAppHandle + '\'' +
+                ", paypalEmail='" + paypalEmail + '\'' +
+                ", bankName='" + bankName + '\'' +
+                ", cCardNumber='" + cCardNumber + '\'' +
+                ", bankAccountNumber='" + bankAccountNumber + '\'' +
+                ", cryptoHoldings='" + cryptoHoldings + '\'' +
+                ", user_info=" + user_info +
+                '}';
+    }
 }
