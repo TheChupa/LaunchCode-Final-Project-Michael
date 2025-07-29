@@ -15,7 +15,8 @@ import UserHomePage from "./components/user/UserHomePage.jsx";
 import LandingPage from "./components/landing-login/LandingPage.jsx";
 import LoginPageNew from "./components/landing-login/LoginPageNew.jsx";
 import LoginPageReturning from "./components/landing-login/LoginPageReturning.jsx";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Financial, Social, Identity, AiResponse, User } from "./classes/exports.js";
 
 
 function App() {
@@ -37,7 +38,7 @@ const[allUserInfo, setAllUserInfo] = useState([]);
     let data = await response.json();
     console.log("Fetched user info JSON data:", data);
 
-    let financials = [];queueMicrotask
+    let financials = [];
     let socials = [];
     let identities = [];
     let aiResponses = [];
@@ -107,18 +108,43 @@ const[allUserInfo, setAllUserInfo] = useState([]);
       identities.push(identity);
       aiResponses.push(aiResponse);
     });
+
     setAllUser(users);
     setAllFinancial(financials);
     setAllSocial(socials);
     setAllIdentity(identities);
     setAllAiResponse(aiResponses);
     setAllUserInfo(data);
+
   } catch (error) {
     console.error("Error fetching user info:", error);
-  } finally {
     setLoading(false);
   }
 };
+
+useEffect(() => {
+		fetchUsersInfo();
+  }, []);
+		
+	useEffect(() => {
+    if (allFinancial.length > 0 &&
+      allSocial.length > 0 &&
+      allIdentity.length > 0 &&
+      allAiResponse.length > 0 &&
+      allUser.length > 0 &&
+      allUserInfo.length > 0
+    ) {
+      setLoading(false);
+    }
+    }, [allFinancial, allSocial, allIdentity, allAiResponse, allUser, allUserInfo]);
+
+   if (loading) {
+    return <div>Loading...</div>;
+  }
+
+
+
+
   return (
     <>
       <BrowserRouter>
@@ -145,5 +171,6 @@ const[allUserInfo, setAllUserInfo] = useState([]);
     </>
   );
 }
+
 
 export default App;
