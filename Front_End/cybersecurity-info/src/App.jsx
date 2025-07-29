@@ -23,7 +23,6 @@ function App() {
 const [loading, setLoading] = useState(true);
 const [loggedIn, setLoggedIn] = useState(false);
 
-// TEMP until auth is implemented
 const[allFinancial, setAllFinancial] = useState([]);
 const[allSocial, setAllSocial] = useState([]);
 const[allIdentity, setAllIdentity] = useState([]);
