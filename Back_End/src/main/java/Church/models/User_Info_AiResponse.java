@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
-public class AiResponse {
+public class User_Info_AiResponse {
 
     // Will hold responses from the Rest Controller input.
 
@@ -20,8 +20,9 @@ public class AiResponse {
    @JsonBackReference
    private User_Info userInfo;
 
-    public AiResponse(){}
-    public AiResponse(String identityResponse, String financialResponse, String socialResponse) {
+    public User_Info_AiResponse(){}
+
+    public User_Info_AiResponse(String identityResponse, String financialResponse, String socialResponse) {
         this.identityResponse = identityResponse;
         this.financialResponse = financialResponse;
         this.socialResponse = socialResponse;
