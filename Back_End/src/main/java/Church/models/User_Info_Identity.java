@@ -141,4 +141,23 @@ public class User_Info_Identity {
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
+
+    @Override
+    public String toString() {
+        return "User_Info_Identity{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", address='" + address + '\'' +
+                ", zipCode='" + zipCode + '\'' +
+                ", state='" + state + '\'' +
+                ", dob='" + dob + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", driversLicenceNum='" + driversLicenceNum + '\'' +
+                ", ssnLast4='" + ssnLast4 + '\'' +
+                ", passPortNum='" + passPortNum + '\'' +
+                ", user_info=" + user_info +
+                '}';
+    }
 }

@@ -33,12 +33,12 @@ public class User_Info {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ai_response_id", referencedColumnName = "id")
     @JsonManagedReference
-    private AiResponse aiResponse;
+    private User_Info_AiResponse aiResponse;
 
     public User_Info() {
     }
 
-    public User_Info(User user, User_Info_Identity identity, User_Info_Social social, User_Info_Financial financial, AiResponse aiResponse) {
+    public User_Info(User user, User_Info_Identity identity, User_Info_Social social, User_Info_Financial financial, User_Info_AiResponse aiResponse) {
         this.user = user;
         this.identity = identity;
         this.social = social;
@@ -86,11 +86,11 @@ public class User_Info {
         this.financial = financial;
     }
 
-    public void setAiResponse(AiResponse aiResponse) {
-        this.aiResponse = aiResponse;
+    public User_Info_AiResponse getAiResponse() {
+        return aiResponse;
     }
 
-    public AiResponse getAiResponse() {
-        return aiResponse;
+    public void setAiResponse(User_Info_AiResponse aiResponse) {
+        this.aiResponse = aiResponse;
     }
 }
