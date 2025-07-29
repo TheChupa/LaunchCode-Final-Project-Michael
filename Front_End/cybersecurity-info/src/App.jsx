@@ -11,6 +11,8 @@ import TrainingProgram from "./components/training-room/TrainingRoomProgram.jsx"
 import ThankYouPage from "./pages/about-me/ThankYouPage.jsx";
 import AdminHomePage from "./components/admin/AdminHomePage.jsx";
 import PublicHomePage from "./components/public/PublicHomePage.jsx";
+import UserHomePage from "./components/user/UserHomePage.jsx";
+import LandingPage from "./components/landing-page/LandingPage.jsx";
 
 function App() {
   return (
@@ -18,8 +20,10 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path="/" element={<AdminHomePage />} />
+         <Route path="/" element={<LandingPage/>} />
           <Route path="/public" element={<PublicHomePage />} />
+          <Route path="/admin" element={<AdminHomePage />} />
+          <Route path="/user" element={<UserHomePage />} />
           <Route path="/resources/AllResources" element={<ResourcesPage />} />
           <Route path="/Audit" element={<AuditForm />} />
           <Route path="/AboutMe" element={<AboutMe />} />

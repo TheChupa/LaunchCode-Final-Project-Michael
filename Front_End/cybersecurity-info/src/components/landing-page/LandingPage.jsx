@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import HomePageCard from "../homepage/HomePageCard";
 
-const PublicHomePage = () => {
+const LandingPage = () => {
   const navigate = useNavigate();
 
   return (
@@ -10,8 +10,8 @@ const PublicHomePage = () => {
         <div className="flex-container">
           <div className="flex-items">
             <HomePageCard
-              title="Audit my Digital Footprint"
-              description="Enter at your own risk!"
+              title="Returning User Login"
+              description=""
               onClick={() => {
                 console.log("Button clicked!");
                 navigate("/resources/AllResources");
@@ -20,19 +20,19 @@ const PublicHomePage = () => {
           </div>
           <div className="flex-items">
              <HomePageCard
-              title="Train with AI Morpheus"
-              description="Gotta Keep the lights on!"
+              title="New User Login"
+              description=""
               onClick={() => {
                 console.log("Button clicked!");
                 navigate("/Audit");
               }}
             />
             <HomePageCard
-              title="Learn more about Cyber Threats"
+              title="Anonymous User"
               description=""
               onClick={() => {
                 console.log("Button clicked!");
-                navigate("/resources/AllResources");
+                navigate("/Public");
               }}
             />
           </div>
@@ -46,11 +46,11 @@ const PublicHomePage = () => {
               }}
             />
             <HomePageCard
-              title="Power Off."
-              description={"Log-Out"}
+              title="Find more Resources"
+              description=""
               onClick={() => {
                 console.log("Button clicked!");
-                navigate("/Audit");
+                navigate("/resources/AllResources");
               }}
             />
           </div>
@@ -60,4 +60,4 @@ const PublicHomePage = () => {
   );
 };
 
-export default PublicHomePage;
+export default LandingPage;
