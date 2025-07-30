@@ -46,18 +46,14 @@ const[allUserInfo, setAllUserInfo] = useState([]);
     let userInfos = [];
 
     data.forEach(userInfo => {
-      let financial = new Financial(
-        userInfo.financial.id,
-        userInfo.financial.venmoHandle,
-        userInfo.financial.cashAppHandle,
-        userInfo.financial.paypalHandle,
-        userInfo.financial.bankName,
-        userInfo.financial.creditCardNum,
-        userInfo.financial.bankAccountNum,
-        userInfo.financial.cryptoHoldings
+
+       let user = new User(
+        userInfo.user.id,
+        userInfo.user.username,
+        userInfo.user.password
       );
 
-      let social = new Social(
+       let social = new Social(
         userInfo.social.id,
         userInfo.social.motherMaidenName,
         userInfo.social.fatherMiddleName,
@@ -65,13 +61,28 @@ const[allUserInfo, setAllUserInfo] = useState([]);
         userInfo.social.numOfSiblings,
         userInfo.social.elementarySchool,
         userInfo.social.firstPetsName,
-        userInfo.social.linkedInProfile,
-        userInfo.social.facebookProfile,
-        userInfo.social.twitterProfile,
-        userInfo.social.tiktokHandle,
-        userInfo.social.snapchatProfile,
-        userInfo.social.youtubeProfile
+        userInfo.social.hasLinkedIn,
+        userInfo.social.hasFaceBook,
+        userInfo.social.hasInstagram,
+        userInfo.social.hasTwitter,
+        userInfo.social.hasTikTok,
+        userInfo.social.hasSnapchat,
+        userInfo.social.hasYouTube,
+        userInfo.social.hasGithub
       );
+
+      let financial = new Financial(
+        userInfo.financial.id,
+        userInfo.financial.bankName,
+        userInfo.financial.creditScore,
+        userInfo.financial.hasVenmo,
+        userInfo.financial.hasCashApp,
+        userInfo.financial.hasPaypal,
+        userInfo.financial.hasCreditCard,
+        userInfo.financial.hasCrypto
+      );
+
+     
 
       let identity = new Identity(
         userInfo.identity.id,
@@ -83,16 +94,13 @@ const[allUserInfo, setAllUserInfo] = useState([]);
         userInfo.identity.dob,
         userInfo.identity.phoneNumber,
         userInfo.identity.email,
-        userInfo.identity.driversLicenceNum,
-        userInfo.identity.ssnLast4,
-        userInfo.identity.passPortNum
+        userInfo.identity.isRenting,
+        userInfo.identity.hasSocialSecurityNumber,
+        userInfo.identity.hasDriversLicence,
+        userInfo.identity.hasPassport
       );
 
-      let user = new User(
-        userInfo.user.id,
-        userInfo.user.username,
-        userInfo.user.password
-      );
+     
 
       let aiResponse = new AiResponse(
         userInfo.aiResponse.id,
