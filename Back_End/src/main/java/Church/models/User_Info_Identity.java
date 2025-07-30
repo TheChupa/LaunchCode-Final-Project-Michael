@@ -119,12 +119,11 @@ public class User_Info_Identity {
         this.email = email;
     }
 
-    public Boolean getRenting() {
+    public Boolean getIsRenting() {
         return isRenting;
     }
-
-    public void setRenting(Boolean renting) {
-        isRenting = renting;
+    public void setIsRenting(Boolean isRenting) {
+        this.isRenting = isRenting;
     }
 
     public Boolean getHasSocialSecurityNumber() {
