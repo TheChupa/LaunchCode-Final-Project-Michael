@@ -3,6 +3,7 @@ package Church.models;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
+
 @Entity
 public class User_Info_Financial {
 
@@ -10,26 +11,31 @@ public class User_Info_Financial {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String venmoHandle;
-    private String cashAppHandle;
-    private String paypalEmail;
     private String bankName;
-    private String cCardNumber;
-    private String bankAccountNumber;
-    private String cryptoHoldings;
+
+    private int creditScore;
+
+    private Boolean hasVenmo;
+    private Boolean hasCashApp;
+    private Boolean hasPaypal;
+    private Boolean hasCreditCard;
+    private Boolean hasCrypto;
+
 
     @OneToOne(mappedBy = "financial")
     @JsonBackReference
     private User_Info user_info;
 
+    public User_Info_Financial() {}
 
-
-    public String getVenmoHandle() {
-        return venmoHandle;
-    }
-
-    public int getId() {
-        return id;
+    public User_Info_Financial(String bankName, int creditScore, Boolean hasVenmo, Boolean hasCashApp, Boolean hasPaypal, Boolean hasCreditCard, Boolean hasCrypto) {
+        this.bankName = bankName;
+        this.creditScore = creditScore;
+        this.hasVenmo = hasVenmo;
+        this.hasCashApp = hasCashApp;
+        this.hasPaypal = hasPaypal;
+        this.hasCreditCard = hasCreditCard;
+        this.hasCrypto = hasCrypto;
     }
 
     public User_Info getUser_info() {
@@ -40,24 +46,11 @@ public class User_Info_Financial {
         this.user_info = user_info;
     }
 
-    public void setVenmoHandle(String venmoHandle) {
-        this.venmoHandle = venmoHandle;
+    public int getCreditScore() {
+        return creditScore;
     }
-
-    public String getCashAppHandle() {
-        return cashAppHandle;
-    }
-
-    public void setCashAppHandle(String cashAppHandle) {
-        this.cashAppHandle = cashAppHandle;
-    }
-
-    public String getPaypalEmail() {
-        return paypalEmail;
-    }
-
-    public void setPaypalEmail(String paypalEmail) {
-        this.paypalEmail = paypalEmail;
+    public void setCreditScore(int creditScore) {
+        this.creditScore = creditScore;
     }
 
     public String getBankName() {
@@ -68,41 +61,61 @@ public class User_Info_Financial {
         this.bankName = bankName;
     }
 
-    public String getcCardNumber() {
-        return cCardNumber;
+    public Boolean getHasCrypto() {
+        return hasCrypto;
     }
 
-    public void setcCardNumber(String cCardNumber) {
-        this.cCardNumber = cCardNumber;
+    public void setHasCrypto(Boolean hasCrypto) {
+        this.hasCrypto = hasCrypto;
     }
 
-    public String getbankAccountNumber() {
-        return bankAccountNumber;
+    public Boolean getHasCreditCard() {
+        return hasCreditCard;
     }
 
-    public void setbankAccountNumber(String bankAccountNumber) {
-        bankAccountNumber = bankAccountNumber;
+    public void setHasCreditCard(Boolean hasCreditCard) {
+        this.hasCreditCard = hasCreditCard;
     }
 
-    public String getCryptoHoldings() {
-        return cryptoHoldings;
+    public Boolean getHasPaypal() {
+        return hasPaypal;
     }
 
-    public void setCryptoHoldings(String cryptoHoldings) {
-        this.cryptoHoldings = cryptoHoldings;
+    public void setHasPaypal(Boolean hasPaypal) {
+        this.hasPaypal = hasPaypal;
+    }
+
+    public Boolean getHasCashApp() {
+        return hasCashApp;
+    }
+
+    public void setHasCashApp(Boolean hasCashApp) {
+        this.hasCashApp = hasCashApp;
+    }
+
+    public Boolean getHasVenmo() {
+        return hasVenmo;
+    }
+
+    public void setHasVenmo(Boolean hasVenmo) {
+        this.hasVenmo = hasVenmo;
+    }
+
+    public int getId() {
+        return id;
     }
 
     @Override
     public String toString() {
         return "User_Info_Financial{" +
                 "id=" + id +
-                ", venmoHandle='" + venmoHandle + '\'' +
-                ", cashAppHandle='" + cashAppHandle + '\'' +
-                ", paypalEmail='" + paypalEmail + '\'' +
+                ", hasVenmo=" + hasVenmo +
+                ", hasCashApp=" + hasCashApp +
+                ", hasPaypal=" + hasPaypal +
+                ", hasCreditCard=" + hasCreditCard +
+                ", hasCrypto=" + hasCrypto +
                 ", bankName='" + bankName + '\'' +
-                ", cCardNumber='" + cCardNumber + '\'' +
-                ", bankAccountNumber='" + bankAccountNumber + '\'' +
-                ", cryptoHoldings='" + cryptoHoldings + '\'' +
+                ", creditScore='" + creditScore + '\'' +
                 ", user_info=" + user_info +
                 '}';
     }

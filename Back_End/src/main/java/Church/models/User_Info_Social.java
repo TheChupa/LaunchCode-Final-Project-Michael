@@ -3,8 +3,6 @@ package Church.models;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
-import java.util.List;
-
 @Entity
 public class User_Info_Social {
 
@@ -18,13 +16,16 @@ public class User_Info_Social {
     private int numOfSiblings;
     private String elementarySchool;
     private String firstPetsName;
-    private String linkedInProfile;
-    private String facebookProfile;
-    private String instagramProfile;
-    private String twitterProfile;
-    private String tiktokHandle;
-    private String snapchatProfile;
-    private String youtubeProfile;
+
+    private Boolean hasLinkedIn;
+    private Boolean hasFacebook;
+    private Boolean hasInstagram;
+    private Boolean hasTwitter;
+    private Boolean hasTikTok;
+    private Boolean hasSnapchat;;
+    private Boolean hasYouTube;
+    private Boolean hasGithub;
+
 
     @OneToOne(mappedBy = "social")
     @JsonBackReference
@@ -33,28 +34,21 @@ public class User_Info_Social {
     public User_Info_Social() {
     }
 
-    public User_Info_Social(String motherMaidenName, String fatherMiddleName, String firstVehicle, int numOfSiblings, String elementarySchool, String firstPetsName, String linkedInProfile, String facebookProfile, String instagramProfile, String twitterProfile, String tiktokHandle, String snapchatProfile, String youtubeProfile) {
+    public User_Info_Social(String motherMaidenName, String fatherMiddleName, String firstVehicle, int numOfSiblings, String elementarySchool, String firstPetsName, Boolean hasLinkedIn, Boolean hasFacebook, Boolean hasInstagram, Boolean hasTwitter, Boolean hasTikTok, Boolean hasSnapchat, Boolean hasYouTube, Boolean hasGithub) {
         this.motherMaidenName = motherMaidenName;
         this.fatherMiddleName = fatherMiddleName;
         this.firstVehicle = firstVehicle;
         this.numOfSiblings = numOfSiblings;
         this.elementarySchool = elementarySchool;
         this.firstPetsName = firstPetsName;
-        this.linkedInProfile = linkedInProfile;
-        this.facebookProfile = facebookProfile;
-        this.instagramProfile = instagramProfile;
-        this.twitterProfile = twitterProfile;
-        this.tiktokHandle = tiktokHandle;
-        this.snapchatProfile = snapchatProfile;
-        this.youtubeProfile = youtubeProfile;
-    }
-
-    public User_Info getUser_info() {
-        return user_info;
-    }
-
-    public void setUser_info(User_Info user_info) {
-        this.user_info = user_info;
+        this.hasLinkedIn = hasLinkedIn;
+        this.hasFacebook = hasFacebook;
+        this.hasInstagram = hasInstagram;
+        this.hasTwitter = hasTwitter;
+        this.hasTikTok = hasTikTok;
+        this.hasSnapchat = hasSnapchat;
+        this.hasYouTube = hasYouTube;
+        this.hasGithub = hasGithub;
     }
 
     public int getId() {
@@ -110,60 +104,76 @@ public class User_Info_Social {
         this.firstPetsName = firstPetsName;
     }
 
-    public String getLinkedInProfile() {
-        return linkedInProfile;
+    public Boolean getHasLinkedIn() {
+        return hasLinkedIn;
     }
 
-    public void setLinkedInProfile(String linkedInProfile) {
-        this.linkedInProfile = linkedInProfile;
+    public void setHasLinkedIn(Boolean hasLinkedIn) {
+        this.hasLinkedIn = hasLinkedIn;
     }
 
-    public String getFacebookProfile() {
-        return facebookProfile;
+    public Boolean getHasFacebook() {
+        return hasFacebook;
     }
 
-    public void setFacebookProfile(String facebookProfile) {
-        this.facebookProfile = facebookProfile;
+    public void setHasFacebook(Boolean hasFacebook) {
+        this.hasFacebook = hasFacebook;
     }
 
-    public String getInstagramProfile() {
-        return instagramProfile;
+    public Boolean getHasInstagram() {
+        return hasInstagram;
     }
 
-    public void setInstagramProfile(String instagramProfile) {
-        this.instagramProfile = instagramProfile;
+    public void setHasInstagram(Boolean hasInstagram) {
+        this.hasInstagram = hasInstagram;
     }
 
-    public String getTwitterProfile() {
-        return twitterProfile;
+    public Boolean getHasTwitter() {
+        return hasTwitter;
     }
 
-    public void setTwitterProfile(String twitterProfile) {
-        this.twitterProfile = twitterProfile;
+    public void setHasTwitter(Boolean hasTwitter) {
+        this.hasTwitter = hasTwitter;
     }
 
-    public String getTiktokHandle() {
-        return tiktokHandle;
+    public Boolean getHasTikTok() {
+        return hasTikTok;
     }
 
-    public void setTiktokHandle(String tiktokHandle) {
-        this.tiktokHandle = tiktokHandle;
+    public void setHasTikTok(Boolean hasTikTok) {
+        this.hasTikTok = hasTikTok;
     }
 
-    public String getSnapchatProfile() {
-        return snapchatProfile;
+    public Boolean getHasSnapchat() {
+        return hasSnapchat;
     }
 
-    public void setSnapchatProfile(String snapchatProfile) {
-        this.snapchatProfile = snapchatProfile;
+    public void setHasSnapchat(Boolean hasSnapchat) {
+        this.hasSnapchat = hasSnapchat;
     }
 
-    public String getYoutubeProfile() {
-        return youtubeProfile;
+    public Boolean getHasYouTube() {
+        return hasYouTube;
     }
 
-    public void setYoutubeProfile(String youtubeProfile) {
-        this.youtubeProfile = youtubeProfile;
+    public void setHasYouTube(Boolean hasYouTube) {
+        this.hasYouTube = hasYouTube;
+    }
+
+    public Boolean getHasGithub() {
+        return hasGithub;
+    }
+
+    public void setHasGithub(Boolean hasGithub) {
+        this.hasGithub = hasGithub;
+    }
+
+    public User_Info getUser_info() {
+        return user_info;
+    }
+
+    public void setUser_info(User_Info user_info) {
+        this.user_info = user_info;
     }
 
     @Override
@@ -176,13 +186,14 @@ public class User_Info_Social {
                 ", numOfSiblings=" + numOfSiblings +
                 ", elementarySchool='" + elementarySchool + '\'' +
                 ", firstPetsName='" + firstPetsName + '\'' +
-                ", linkedInProfile='" + linkedInProfile + '\'' +
-                ", facebookProfile='" + facebookProfile + '\'' +
-                ", instagramProfile='" + instagramProfile + '\'' +
-                ", twitterProfile='" + twitterProfile + '\'' +
-                ", tiktokHandle='" + tiktokHandle + '\'' +
-                ", snapchatProfile='" + snapchatProfile + '\'' +
-                ", youtubeProfile='" + youtubeProfile + '\'' +
+                ", hasLinkedIn=" + hasLinkedIn +
+                ", hasFacebook=" + hasFacebook +
+                ", hasInstagram=" + hasInstagram +
+                ", hasTwitter=" + hasTwitter +
+                ", hasTikTok=" + hasTikTok +
+                ", hasSnapchat=" + hasSnapchat +
+                ", hasGmail=" + hasYouTube +
+                ", hasGithub=" + hasGithub +
                 ", user_info=" + user_info +
                 '}';
     }

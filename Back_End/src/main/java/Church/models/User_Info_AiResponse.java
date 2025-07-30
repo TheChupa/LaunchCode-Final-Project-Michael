@@ -27,7 +27,7 @@ public class User_Info_AiResponse {
    @JsonBackReference
    private User_Info userInfo;
 
-    public User_Info_AiResponse(){}
+   public User_Info_AiResponse(){}
 
     public User_Info_AiResponse(String identityResponse, String financialResponse, String socialResponse) {
         this.identityResponse = identityResponse;
