@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import { useState } from "react";
 import ScamInfoBox from "../../components/training-room/ScamInfoBox";
-import HomePageCard from "../../components/homepage/HomePageCard";
+import HomePageCard from "../page-builders/HomePageCard";
 
 const UserHomePage = () => {
   const [userName, setUserName] = useState("");

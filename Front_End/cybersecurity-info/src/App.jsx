@@ -12,11 +12,12 @@ import ThankYouPage from "./pages/about-me/ThankYouPage.jsx";
 import AdminHomePage from "./components/admin/AdminHomePage.jsx";
 import PublicHomePage from "./components/public/PublicHomePage.jsx";
 import UserHomePage from "./components/user/UserHomePage.jsx";
-import LandingPage from "./components/landing-login/LandingPage.jsx";
-import LoginPageNew from "./components/landing-login/LoginPageNew.jsx";
-import LoginPageReturning from "./components/landing-login/LoginPageReturning.jsx";
+import LandingPage from "./components/landingpage/LandingPage.jsx";
+import LoginPageNew from "./components/public/LoginPageNew.jsx";
+import LoginPageReturning from "./components/public/LoginPageReturning.jsx";
 import { useEffect, useState } from "react";
 import { Financial, Social, Identity, AiResponse, User } from "./classes/exports.js";
+import NewUserDataForm from "./components/public/NewUserDataForm.jsx";
 
 
 function App() {
@@ -164,6 +165,7 @@ useEffect(() => {
           <Route path="/user" element={<UserHomePage />} />
           <Route path="/log-in/returning" element={<LoginPageReturning />} />
           <Route path="/log-in/new-user" element={<LoginPageNew />} />
+          <Route path="/log-in/new-user/form" element={<NewUserDataForm />} />
           <Route path="/resources/AllResources" element={<ResourcesPage />} />
           <Route path="/Audit" element={<AuditForm />} />
           <Route path="/AboutMe" element={<AboutMe />} />

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import HomePageCard from "../../components/homepage/HomePageCard";
+import HomePageCard from "../page-builders/HomePageCard";
 
 const AdminHomePage = () => {
   const navigate = useNavigate();

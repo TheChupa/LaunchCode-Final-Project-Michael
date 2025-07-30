@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import HomePageCard from "../homepage/HomePageCard";
+import HomePageCard from "../page-builders/HomePageCard";
 
 const PublicHomePage = () => {
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ const PublicHomePage = () => {
             />
           </div>
           <div className="flex-items">
-             <HomePageCard
+            <HomePageCard
               title="Train with AI Morpheus"
               description="Gotta Keep the lights on!"
               onClick={() => {
