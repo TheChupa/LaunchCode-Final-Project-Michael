@@ -1,5 +1,5 @@
 export default class Identity {
-    constructor(id, firstName, lastName, address, zipCode, state, dob, phoneNumber,email, driversLicenceNum, ssnLast4, passportNum) {
+    constructor(id, firstName, lastName, address, zipCode, state, dob, phoneNumber, email, isRenting, hasSocialSecurityNumber, hasDriversLicence, hasPassport) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -9,8 +9,9 @@ export default class Identity {
         this.dob = dob;
         this.phoneNumber = phoneNumber;
         this.email = email;
-        this.driversLicenceNum = driversLicenceNum;
-        this.ssnLast4 = ssnLast4;
-        this.passportNum = passportNum;
-    }; 
+        this.isRenting = isRenting; // Boolean
+        this.hasSocialSecurityNumber = hasSocialSecurityNumber; // Boolean
+        this.hasDriversLicence = hasDriversLicence; // Boolean
+        this.hasPassport = hasPassport; // Boolean  
+       }; 
 }
