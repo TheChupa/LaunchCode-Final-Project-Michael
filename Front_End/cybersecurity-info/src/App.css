@@ -98,6 +98,8 @@
 border: 6px outset #0B802B
 }
 
+/* background for all pages */
+
 .background {
   width: 100%;
   height: 100vh;
@@ -105,77 +107,35 @@ border: 6px outset #0B802B
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-}
-
-
-/* Blinking Text */
-
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-.homepage-blink {
-  font-size: 30px;
-  color: green;
-  animation: blink 1.5s infinite;
-}
-
-.table-blink {
-  color: red;
-  animation: blink 2s infinite;
-}
-
-.blue-button-homepage:hover {
-  animation: flash-blue 0.3s infinite;
-}
-.red-button-homepage:hover {
-  animation: flash-red 0.3s infinite;
-}
-
-.welcome-button {
-  background-color: #2d7842;
-  padding: 25px 25px;
-  border-radius: 10px;
+   display: flex;
   justify-content: center;
-}
-.welcome-button:hover {
-  animation: flash-green 0.5s infinite;
+  align-items: center;
+
 }
 
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
+
+
+/* Login-Pages*/
+.login-page-container {
   height: 100vh;
-  background-color: green(0, 0, 0, 0.4);
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  background-image: url("/path-to/dark-background.gif");
+  background-size: cover;
+  background-position: center;
 }
-.username-box {
-  background: white;
-  width: 100vw;
-  height: 100vh;
+.login-page-card {
+background-color: rgba(255, 255, 255, 0.9);
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  width: 350px;
+  max-width: 90vw;
 }
+
+
 
 /* About Me Page */
 

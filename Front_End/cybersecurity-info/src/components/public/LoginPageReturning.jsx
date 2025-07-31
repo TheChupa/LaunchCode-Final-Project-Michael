@@ -19,8 +19,11 @@ const LoginPageReturning = () => {
   };
 
   return (
-    <div className="login-page">
+    <div className="background">
+    <div className= "login-page-container">
+    <div className="login-page-card">
       <h1>Welcome Back!</h1>
+      
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="username">Username:</label>
@@ -45,7 +48,11 @@ const LoginPageReturning = () => {
           />
         </div>
         <button type="submit">Login</button>
+        
       </form>
+    <button onClick={() => navigate(-1)}>Back</button>
+    </div>
+    </div>
     </div>
   );
 };

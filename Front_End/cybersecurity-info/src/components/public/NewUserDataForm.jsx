@@ -8,6 +8,7 @@ const NewUserDataForm = () => {
     const location = useLocation();
     const { userId } = location.state || {};
     const navigate = useNavigate();
+    
     const [formData, setFormData] = useState({
         userId: userId,
         social: {

@@ -27,7 +27,11 @@ const LoginPageNew = () => {
       });
 
       const createdUser = await reponse.json();
+
+
       const userId = createdUser.id;
+
+
       navigate("/log-in/new-user/form", { state: { userId } });
     } catch (error) {
       console.error("Error creating new user:", error);
@@ -35,8 +39,11 @@ const LoginPageNew = () => {
   };
 
   return (
-    <div className="login-page">
-      <h1>Welcome Back!</h1>
+
+    <div className = "background">
+    <div className = "login-page-container">
+    <div className="login-page-card">
+      <h1>Hello {username}!</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <TextBox
@@ -59,6 +66,10 @@ const LoginPageNew = () => {
         </div>
         <button type="submit">Login</button>
       </form>
+
+      <button onClick={() => navigate(-1)}>Back</button>
+    </div>
+    </div>
     </div>
   );
 };
