@@ -93,4 +93,11 @@ public class User_Info {
     public void setAiResponse(User_Info_AiResponse aiResponse) {
         this.aiResponse = aiResponse;
     }
+
+    @Override
+    public String toString() {
+        return "User_Info{" +
+                "id=" + id + "is not important, do not include in response" +
+                '}';
+    }
 }

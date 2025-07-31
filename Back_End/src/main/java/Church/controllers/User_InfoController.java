@@ -70,7 +70,7 @@ public class User_InfoController {
                 User_Info_Financial financial = userInfoData.getFinancial();
                 financial.setUser_info(user_info);
                 user_info.setFinancial(financial);
-
+                System.out.println(financial.toString());
                 GenerateContentResponse response = client.models.generateContent(
                         "gemini-2.0-flash-001",
                         "Pretend you are Morpheus from the Matrix, but you're the Head of an exasperated Infosec team teaching the corporate underlings to be safe online. You have gathered the following information " + financial.toString() + ". Create some advice based on this data and how to keep them safe online in 2025. Keep it under 2000 characters", null);
