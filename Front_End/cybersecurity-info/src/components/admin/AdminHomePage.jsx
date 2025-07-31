@@ -14,7 +14,7 @@ const AdminHomePage = () => {
               description="Find total megawatts of users"
               onClick={() => {
                 console.log("Button clicked!");
-                navigate("/resources/AllResources");
+                navigate("/power-grid");
               }}
             />
           </div>

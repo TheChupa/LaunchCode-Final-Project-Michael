@@ -18,6 +18,7 @@ import LoginPageReturning from "./components/public/LoginPageReturning.jsx";
 import { useEffect, useState } from "react";
 import { Financial, Social, Identity, AiResponse, User } from "./classes/exports.js";
 import NewUserDataForm from "./components/public/NewUserDataForm.jsx";
+import PowerGridPage from "./components/admin/PowerGrid.jsx";
 
 
 function App() {
@@ -33,7 +34,9 @@ const[allUser, setAllUser] = useState([]);
 const[allUserInfo, setAllUserInfo] = useState([]);
 
 
-  const fetchUsersInfo = async () => {
+const fetchUsersInfo = async () => {
+
+
   try {
     let response = await fetch(`http://localhost:8080/api/user_info/details`);
     let data = await response.json();
@@ -110,26 +113,35 @@ const[allUserInfo, setAllUserInfo] = useState([]);
         userInfo.aiResponse.socialResponse
       );
 
-      userInfos.push(userInfo);
+      userInfos.push({
+        user,
+        social,
+        financial,
+        identity,
+        aiResponse
+      });
+      
       users.push(user);
       financials.push(financial);
       socials.push(social);
       identities.push(identity);
-      aiResponses.push(aiResponse);
+      aiResponses.push(aiResponse)
     });
+  
 
     setAllUser(users);
     setAllFinancial(financials);
     setAllSocial(socials);
     setAllIdentity(identities);
     setAllAiResponse(aiResponses);
-    setAllUserInfo(data);
+    setAllUserInfo(userInfos);
 
   } catch (error) {
     console.error("Error fetching user info:", error);
     setLoading(false);
   }
-};
+}
+
 
 useEffect(() => {
 		fetchUsersInfo();
@@ -149,7 +161,7 @@ useEffect(() => {
 
    if (loading) {
     return <div>Loading...</div>;
-  }
+   }
 
 
 
@@ -162,6 +174,7 @@ useEffect(() => {
          <Route path="/" element={<LandingPage/>} />
           <Route path="/public" element={<PublicHomePage />} />
           <Route path="/admin" element={<AdminHomePage />} />
+          <Route path="/power-grid" element={<PowerGridPage userinfo={allUserInfo} />} />
           <Route path="/user" element={<UserHomePage />} />
           <Route path="/log-in/returning" element={<LoginPageReturning />} />
           <Route path="/log-in/new-user" element={<LoginPageNew />} />
