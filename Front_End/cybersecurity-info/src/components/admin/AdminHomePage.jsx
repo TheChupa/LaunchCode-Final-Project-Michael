@@ -10,19 +10,15 @@ const AdminHomePage = () => {
         <div className="flex-container">
           <div className="flex-items">
             <HomePageCard
-              title="View Power Grid"
+              title="Admin Page"
               description=""
-              onClick={() => {
-                console.log("Button clicked!");
-                navigate("/power-grid");
-              }}
+            
             />
           </div>
           <div className="flex-items">
             <HomePageCard
               title="How much is a battery worth?"
               onClick={() => {
-                console.log("Button clicked!");
                 navigate("/power-grid/value");
               }}
             />
@@ -30,7 +26,6 @@ const AdminHomePage = () => {
               title="Teachings of AI Morpheus"
               description="!"
               onClick={() => {
-                console.log("Button clicked!");
                 navigate("/AI-Morpheus");
               }}
             />
@@ -39,15 +34,13 @@ const AdminHomePage = () => {
             <HomePageCard
               title="Modify Power Grid"
               onClick={() => {
-                console.log("Button clicked!");
-                navigate("/Admin");
+                navigate("/power-grid");
               }}
             />
             <HomePageCard
-              title="Power Off."
+              title="Power Off"
               description={""}
-              onClick={() => {
-                console.log("Button clicked!");
+              onClick={() => {               
                 navigate("/");
               }}
             />

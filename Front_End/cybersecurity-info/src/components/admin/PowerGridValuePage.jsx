@@ -3,9 +3,9 @@ import BatteryCard from "../page-builders/BatteryCard";
 const PowerGridValuePage = ({ userinfo }) => {
 
   const totalSystemWorth = userinfo.reduce((sum, user) => {
-    const social = user.social?.worthHowMuch?.() || 0;
-    const financial = user.financial?.worthHowMuch?.() || 0;
-    const identity = user.identity?.worthHowMuch?.() || 0;
+    const social = user.social.worthHowMuch() || 0;
+    const financial = user.financial.worthHowMuch() || 0;
+    const identity = user.identity.worthHowMuch() || 0;
     return sum + social + financial + identity;
   }, 0);
  

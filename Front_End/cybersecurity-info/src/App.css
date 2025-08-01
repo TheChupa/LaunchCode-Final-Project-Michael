@@ -101,16 +101,16 @@ border: 6px outset #0B802B
 /* background for all pages */
 
 .background {
-  width: 100%;
-  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100%;
+  width: 100vw;
   background-image: url("/36013.gif");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  
-  justify-content: center;
-  align-items: center;
-
+  z-index: -1;
 }
 
 
@@ -142,7 +142,7 @@ background-color: rgba(255, 255, 255, 0.9);
   padding: 16px;
   margin: 12px;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.966);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -193,11 +193,11 @@ background-color: rgba(255, 255, 255, 0.9);
   border: 2px solid lime;
   animation: blinkGreen 1s infinite;
   transform: scale(1.03);
-  box-shadow: 0 6px 12px rgba(0, 102, 128, 0.3); /* green glow */
+  box-shadow: 0 6px 12px rgba(0, 102, 128, 0.3); 
   transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, border 0.3s;
 }
 .power-grid-cell-container {
-  background-color: rgba(255, 255, 255, 0.9); /* soft white overlay */
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 1px;
   border-radius: 1px;
 }
