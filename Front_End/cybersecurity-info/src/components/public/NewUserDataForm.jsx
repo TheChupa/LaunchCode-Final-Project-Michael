@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import TextBox from "../form-builders/TextBox.jsx";
 import BooleanBox from "../form-builders/BooleanBox.jsx";
@@ -8,9 +8,11 @@ const NewUserDataForm = () => {
     const location = useLocation();
     const { userId } = location.state || {};
     const navigate = useNavigate();
+
+    console.log("User ID:", userId);
     
     const [formData, setFormData] = useState({
-        userId: userId,
+        userId: userId || null,
         social: {
             motherMaidenName: "",
             fatherMiddleName: "",
@@ -51,6 +53,15 @@ const NewUserDataForm = () => {
             hasPassport: false
         },
     });
+
+    const [loading, setLoading] = useState(false);
+
+useEffect(() => {
+  if (userId) {
+    setFormData(prev => ({ ...prev, userId }));
+  }
+}, [userId]);
+
   const handleChange = (section, field) => (e) => {
 		const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
 		setFormData((prev) => ({
@@ -64,6 +75,8 @@ const NewUserDataForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true);
+        const minWait = new Promise(resolve => setTimeout(resolve, 1500)); // 
         try {
             const response = await fetch("http://localhost:8080/api/user_info/add", {
                 method: "POST",
@@ -74,15 +87,32 @@ const NewUserDataForm = () => {
             });
             
             const data = await response.json();
-            console.log("Form submitted successfully:", data);
-            navigate("/Training-Room");
+            
+            
+
+
+            if (!response.ok) {
+                console.log("Error submitting form:", data.id);
+                await minWait;
+                alert("Error submitting form. Please try again.");
+            } else {
+                console.log("Form submitted successfully:", data.id);
+                await minWait;
+                navigate("/PublicHomePage", { state: { userId: data.id } });
+            }   
+
         } catch (error) {
             console.error("Error submitting form:", error);
+        }finally
+{
+            setLoading(false);
         }
     };
 
     return(
         <>
+        <div className="background">
+        <div  className="new-user-data-form-container">
         <form onSubmit={handleSubmit} className="new-user-data-form">
        <div className= "grouping-box">
         <h2>Social Information</h2>
@@ -134,7 +164,7 @@ const NewUserDataForm = () => {
         id="hasFaceBook"
         label="Facebook:"
         checked={formData.social.hasFacebook}
-        handleChange={handleChange("social", "hasFaceBookk")}
+        handleChange={handleChange("social", "hasFacebook")}
         />
         <BooleanBox
         id="hasInstagram"
@@ -298,10 +328,23 @@ const NewUserDataForm = () => {
         checked={formData.identity.hasPassport}
         handleChange={handleChange("identity", "hasPassport")}
         />
+        
         </div>
+                <button type="submit" disabled={loading}>{loading ? "Submitting..." : "Submit"}</button>
+
         </div>
-        <button type="submit">Submit</button>
+
         </form>
+            {loading && (
+          <div className="loading-overlay">
+            <div className="loading-modal">
+              <div className="spinner" />
+              <p>Submitting, please wait...</p>
+            </div>
+          </div>
+        )}
+        </div>
+        </div>
         </>
     );
 

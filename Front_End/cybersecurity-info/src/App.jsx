@@ -21,6 +21,7 @@ import NewUserDataForm from "./components/public/NewUserDataForm.jsx";
 import PowerGridPage from "./components/admin/PowerGridPage.jsx";
 import PowerGridValuePage from "./components/admin/PowerGridValuePage.jsx";
 import MorpheusRamblingPage from "./components/admin/MorpheusRamblingPage.jsx";
+import MorpheusAiSlop from "./components/public/MorpheusAiSlop.jsx";
 
 
 function App() {
@@ -183,6 +184,8 @@ useEffect(() => {
           <Route path="/log-in/returning" element={<LoginPageReturning />} />
           <Route path="/log-in/new-user" element={<LoginPageNew />} />
           <Route path="/log-in/new-user/form" element={<NewUserDataForm />} />
+          <Route path="/PublicHomePage" element={<PublicHomePage />} />
+          <Route path="/train-with-AiMorpheus" element={<MorpheusAiSlop />} />
           <Route path="/resources/AllResources" element={<ResourcesPage />} />
           <Route path="/Audit" element={<AuditForm />} />
           <Route path="/AboutMe" element={<AboutMe />} />

@@ -1,8 +1,15 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import HomePageCard from "../page-builders/HomePageCard";
 
 const PublicHomePage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Extract userId from location state
+  // If userId is not found, it will be undefined 
+
+  const { userId } = location.state || {};
+  console.log("User ID from location state:", userId);
 
   return (
     <>
@@ -10,8 +17,8 @@ const PublicHomePage = () => {
         <div className="flex-container">
           <div className="flex-items">
             <HomePageCard
-              title="Audit my Digital Footprint"
-              description="Enter at your own risk!"
+              title="Welcome your user_info id is:"
+              description={userId}
               onClick={() => {
                 console.log("Button clicked!");
                 navigate("/resources/AllResources");
@@ -24,7 +31,7 @@ const PublicHomePage = () => {
               description="Gotta Keep the lights on!"
               onClick={() => {
                 console.log("Button clicked!");
-                navigate("/Audit");
+                navigate("/train-with-AiMorpheus", { state: { userId } });
               }}
             />
             <HomePageCard

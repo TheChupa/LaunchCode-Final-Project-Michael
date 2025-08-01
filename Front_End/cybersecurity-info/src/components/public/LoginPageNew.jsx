@@ -26,13 +26,12 @@ const LoginPageNew = () => {
         body: JSON.stringify(newUser),
       });
 
-      const createdUser = await reponse.json();
+      const data = await reponse.json();
 
 
-      const userId = createdUser.id;
 
 
-      navigate("/log-in/new-user/form", { state: { userId } });
+      navigate("/log-in/new-user/form", { state: { userId: data.id } });
     } catch (error) {
       console.error("Error creating new user:", error);
     }
