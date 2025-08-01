@@ -32,7 +32,7 @@ const AdminHomePage = () => {
               description="!"
               onClick={() => {
                 console.log("Button clicked!");
-                navigate("/Admin");
+                navigate("/AI-Morpheus");
               }}
             />
           </div>

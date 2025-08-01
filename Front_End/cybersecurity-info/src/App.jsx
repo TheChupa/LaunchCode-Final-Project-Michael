@@ -20,6 +20,7 @@ import { Financial, Social, Identity, AiResponse, User } from "./classes/exports
 import NewUserDataForm from "./components/public/NewUserDataForm.jsx";
 import PowerGridPage from "./components/admin/PowerGridPage.jsx";
 import PowerGridValuePage from "./components/admin/PowerGridValuePage.jsx";
+import MorpheusRamblingPage from "./components/admin/MorpheusRamblingPage.jsx";
 
 
 function App() {
@@ -177,7 +178,7 @@ useEffect(() => {
           <Route path="/admin" element={<AdminHomePage />} />
           <Route path="/power-grid" element={<PowerGridPage userinfo={allUserInfo} refetch={fetchUsersInfo}  />} />
           <Route path="/power-grid/value" element={<PowerGridValuePage userinfo={allUserInfo} />} />
-          
+          <Route path="/AI-Morpheus" element={<MorpheusRamblingPage aiResponse={allAiResponse} />} />
           <Route path="/user" element={<UserHomePage />} />
           <Route path="/log-in/returning" element={<LoginPageReturning />} />
           <Route path="/log-in/new-user" element={<LoginPageNew />} />

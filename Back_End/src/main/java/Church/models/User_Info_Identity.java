@@ -160,21 +160,19 @@ public class User_Info_Identity {
 
     @Override
     public String toString() {
-        return "User_Info_Identity{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", address='" + address + '\'' +
-                ", zipCode='" + zipCode + '\'' +
-                ", state='" + state + '\'' +
-                ", dob='" + dob + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", email='" + email + '\'' +
-                ", isRenting=" + isRenting +
-                ", hasSocialSecurityNumber=" + hasSocialSecurityNumber +
-                ", hasDriversLicence=" + hasDriversLicence +
-                ", hasPassPort=" + hasPassport +
-                ", user_info=" + user_info +
-                '}';
+        return "  My personal information: " +
+                " My first name is " + firstName + '\'' +
+                ", My last name is " + lastName + '\'' +
+                ", My address is " + address + '\'' +
+                ", My zipcode is " + zipCode + '\'' +
+                ", My state is  " + state + '\'' +
+                ", My date of birth is " + dob + '\'' +
+                ", phoneNumber is " + phoneNumber + '\'' +
+                ", email is " + email + '\'' +
+                ", renting status: " + isRenting +
+                ", Social Security Number status: " + hasSocialSecurityNumber +
+                ", Driver's License Status: " + hasDriversLicence +
+                ", Passport Status: " + hasPassport;
+
     }
 }

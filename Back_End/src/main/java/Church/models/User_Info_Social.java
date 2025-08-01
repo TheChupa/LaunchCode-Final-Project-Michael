@@ -178,24 +178,21 @@ public class User_Info_Social {
 
     @Override
     public String toString() {
-        return "User_Info_Social{" +
-                "id=" + id +
-                ", motherMaidenName='" + motherMaidenName + '\'' +
-                ", fatherMiddleName='" + fatherMiddleName + '\'' +
-                ", firstVehicle='" + firstVehicle + '\'' +
-                ", numOfSiblings=" + numOfSiblings +
-                ", elementarySchool='" + elementarySchool + '\'' +
-                ", firstPetsName='" + firstPetsName + '\'' +
-                ", hasLinkedIn=" + hasLinkedIn +
-                ", hasFacebook=" + hasFacebook +
-                ", hasInstagram=" + hasInstagram +
-                ", hasTwitter=" + hasTwitter +
-                ", hasTikTok=" + hasTikTok +
-                ", hasSnapchat=" + hasSnapchat +
-                ", hasGmail=" + hasYouTube +
-                ", hasGithub=" + hasGithub +
-                ", user_info=" + user_info +
-                '}';
+        return
+                ", My mother's Maiden name is: " + motherMaidenName + '\'' +
+                ", My Father's Middle Name is: " + fatherMiddleName + '\'' +
+                ", My fist vehicle was " + firstVehicle + '\'' +
+                ", I have this many siblings: " + numOfSiblings +
+                ", My elementary school was: " + elementarySchool + '\'' +
+                ", My first Pet's name was: " + firstPetsName + '\'' +
+                ", LinkedIN status: " + hasLinkedIn +
+                ", Facebook Status: " + hasFacebook +
+                ", Instagram status: " + hasInstagram +
+                ", Twitter Status: " + hasTwitter +
+                ", TikTok Status: " + hasTikTok +
+                ", SnapChat Status: " + hasSnapchat +
+                ", Gmail status: " + hasYouTube +
+                ", GitHub status: " + hasGithub;
     }
 }
 

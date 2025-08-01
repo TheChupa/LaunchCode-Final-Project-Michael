@@ -107,16 +107,12 @@ public class User_Info_Financial {
 
     @Override
     public String toString() {
-        return "User_Info_Financial{" +
-                "id=" + id +
-                ", hasVenmo=" + hasVenmo +
-                ", hasCashApp=" + hasCashApp +
-                ", hasPaypal=" + hasPaypal +
-                ", hasCreditCard=" + hasCreditCard +
-                ", hasCrypto=" + hasCrypto +
-                ", bankName='" + bankName + '\'' +
-                ", creditScore='" + creditScore + '\'' +
-                ", user_info=" + user_info +
-                '}';
+        return " Venmo Status=" + hasVenmo +
+                ", Cash App Status =" + hasCashApp +
+                ", Paypal Status =" + hasPaypal +
+                ", Credit Card Status =" + hasCreditCard +
+                ", Crypto Holdings =" + hasCrypto +
+                ", My bank name is: " + bankName + '\'' +
+                ", My Credit Score is: " + creditScore + '\'';
     }
 }
