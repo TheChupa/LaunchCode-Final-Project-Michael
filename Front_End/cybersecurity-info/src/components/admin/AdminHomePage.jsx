@@ -21,7 +21,6 @@ const AdminHomePage = () => {
           <div className="flex-items">
             <HomePageCard
               title="How much is a battery worth?"
-              description="tie this to Darkweb things for sale using math"
               onClick={() => {
                 console.log("Button clicked!");
                 navigate("/power-grid/value");
@@ -38,8 +37,7 @@ const AdminHomePage = () => {
           </div>
           <div className="flex-items">
             <HomePageCard
-              title="Modify Battery Farm"
-              description="Add, remove, or change users"
+              title="Modify Power Grid"
               onClick={() => {
                 console.log("Button clicked!");
                 navigate("/Admin");

@@ -10,8 +10,8 @@ const LandingPage = () => {
         <div className="flex-container">
           <div className="flex-items">
             <HomePageCard
-              title="Welcome to the Cyber Security Training Room
-              "
+              title="CyberSecurity Training"
+              
             />
           </div>
           <div className="flex-items">
