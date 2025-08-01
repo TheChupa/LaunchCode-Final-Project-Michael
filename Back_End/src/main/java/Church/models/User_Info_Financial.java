@@ -13,7 +13,7 @@ public class User_Info_Financial {
 
     private String bankName;
 
-    private int creditScore;
+    private String creditScore;
 
     private Boolean hasVenmo;
     private Boolean hasCashApp;
@@ -28,7 +28,7 @@ public class User_Info_Financial {
 
     public User_Info_Financial() {}
 
-    public User_Info_Financial(String bankName, int creditScore, Boolean hasVenmo, Boolean hasCashApp, Boolean hasPaypal, Boolean hasCreditCard, Boolean hasCrypto) {
+    public User_Info_Financial(String bankName, String creditScore, Boolean hasVenmo, Boolean hasCashApp, Boolean hasPaypal, Boolean hasCreditCard, Boolean hasCrypto) {
         this.bankName = bankName;
         this.creditScore = creditScore;
         this.hasVenmo = hasVenmo;
@@ -46,10 +46,11 @@ public class User_Info_Financial {
         this.user_info = user_info;
     }
 
-    public int getCreditScore() {
+    public String getCreditScore() {
         return creditScore;
     }
-    public void setCreditScore(int creditScore) {
+
+    public void setCreditScore(String creditScore) {
         this.creditScore = creditScore;
     }
 

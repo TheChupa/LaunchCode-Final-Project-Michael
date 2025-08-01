@@ -13,7 +13,7 @@ public class User_Info_Social {
     private String motherMaidenName;
     private String fatherMiddleName;
     private String firstVehicle;
-    private int numOfSiblings;
+    private String numOfSiblings;
     private String elementarySchool;
     private String firstPetsName;
 
@@ -34,7 +34,7 @@ public class User_Info_Social {
     public User_Info_Social() {
     }
 
-    public User_Info_Social(String motherMaidenName, String fatherMiddleName, String firstVehicle, int numOfSiblings, String elementarySchool, String firstPetsName, Boolean hasLinkedIn, Boolean hasFacebook, Boolean hasInstagram, Boolean hasTwitter, Boolean hasTikTok, Boolean hasSnapchat, Boolean hasYouTube, Boolean hasGithub) {
+    public User_Info_Social(String motherMaidenName, String fatherMiddleName, String firstVehicle, String numOfSiblings, String elementarySchool, String firstPetsName, Boolean hasLinkedIn, Boolean hasFacebook, Boolean hasInstagram, Boolean hasTwitter, Boolean hasTikTok, Boolean hasSnapchat, Boolean hasYouTube, Boolean hasGithub) {
         this.motherMaidenName = motherMaidenName;
         this.fatherMiddleName = fatherMiddleName;
         this.firstVehicle = firstVehicle;
@@ -80,11 +80,11 @@ public class User_Info_Social {
         this.firstVehicle = firstVehicle;
     }
 
-    public int getNumOfSiblings() {
+    public String getNumOfSiblings() {
         return numOfSiblings;
     }
 
-    public void setNumOfSiblings(int numOfSiblings) {
+    public void setNumOfSiblings(String numOfSiblings) {
         this.numOfSiblings = numOfSiblings;
     }
 

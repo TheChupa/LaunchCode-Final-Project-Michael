@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 import java.util.List;
+
+
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/user_info")
@@ -32,7 +34,7 @@ public class User_InfoController {
     User_InfoRepository userInfoRepository;
 
 
-    @GetMapping(value="/details", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/details", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> getAllUserInfo() {
         List<User_Info> allUserInfo = userInfoRepository.findAll();
         return new ResponseEntity<>(allUserInfo, HttpStatus.OK); //200
@@ -118,6 +120,119 @@ public class User_InfoController {
         userInfoRepository.save(user_info);
 
         return new ResponseEntity<>(user_info, HttpStatus.CREATED);
+    }
+
+    @PatchMapping(value = "/update/{userId}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> updateUserInfo(@PathVariable int userId, @RequestBody User_InfoDTO userInfoData) {
+        User user = userRepository.findById(userId).orElse(null);
+        if (user == null) {
+            return new ResponseEntity<>(Collections.singletonMap("response", "User not found"), HttpStatus.NOT_FOUND);
+        }
+
+        User_Info existingUserInfo = userInfoRepository.findByUser(user).orElse(null);
+        if (existingUserInfo == null) {
+            return new ResponseEntity<>(Collections.singletonMap("response", "User_Info not found for user"), HttpStatus.NOT_FOUND);
+        }
+
+        if (userInfoData.getFinancial() != null) {
+
+            User_Info_Financial incomingFinancial = userInfoData.getFinancial();
+            User_Info_Financial existingFinancial = existingUserInfo.getFinancial();
+            if(existingFinancial == null) {
+                incomingFinancial.setUser_info(existingUserInfo);
+                existingUserInfo.setFinancial(incomingFinancial);
+            } else {
+                if (incomingFinancial.getBankName() != null)
+                    existingFinancial.setBankName(incomingFinancial.getBankName());
+                if (incomingFinancial.getCreditScore() != null)
+                    existingFinancial.setCreditScore(incomingFinancial.getCreditScore());
+                if (incomingFinancial.getHasVenmo() != null)
+                    existingFinancial.setHasVenmo(incomingFinancial.getHasVenmo());
+                if (incomingFinancial.getHasCashApp() != null)
+                    existingFinancial.setHasCashApp(incomingFinancial.getHasCashApp());
+                if (incomingFinancial.getHasPaypal() != null)
+                    existingFinancial.setHasPaypal(incomingFinancial.getHasPaypal());
+                if (incomingFinancial.getHasCreditCard() != null)
+                    existingFinancial.setHasCreditCard(incomingFinancial.getHasCreditCard());
+                if (incomingFinancial.getHasCrypto() != null)
+                    existingFinancial.setHasCrypto(incomingFinancial.getHasCrypto());
+
+            }
+        }
+
+
+
+        if (userInfoData.getSocial() != null) {
+            User_Info_Social incomingSocial = userInfoData.getSocial();
+            User_Info_Social existingSocial = existingUserInfo.getSocial();
+
+            if (existingSocial == null) {
+                incomingSocial.setUser_info(existingUserInfo);
+                existingUserInfo.setSocial(incomingSocial);
+            } else {
+                if (incomingSocial.getMotherMaidenName() != null) existingSocial.setMotherMaidenName(incomingSocial.getMotherMaidenName());
+                if (incomingSocial.getFatherMiddleName() != null) existingSocial.setFatherMiddleName(incomingSocial.getFatherMiddleName());
+                if (incomingSocial.getFirstVehicle() != null) existingSocial.setFirstVehicle(incomingSocial.getFirstVehicle());
+                if (incomingSocial.getNumOfSiblings() != null) existingSocial.setNumOfSiblings(incomingSocial.getNumOfSiblings());
+                if (incomingSocial.getElementarySchool() != null) existingSocial.setElementarySchool(incomingSocial.getElementarySchool());
+                if (incomingSocial.getFirstPetsName() != null) existingSocial.setFirstPetsName(incomingSocial.getFirstPetsName());
+                if (incomingSocial.getHasLinkedIn() != null) existingSocial.setHasLinkedIn(incomingSocial.getHasLinkedIn());
+                if (incomingSocial.getHasFacebook() != null) existingSocial.setHasFacebook(incomingSocial.getHasFacebook());
+                if (incomingSocial.getHasInstagram() != null) existingSocial.setHasInstagram(incomingSocial.getHasInstagram());
+                if (incomingSocial.getHasTwitter() != null) existingSocial.setHasTwitter(incomingSocial.getHasTwitter());
+                if (incomingSocial.getHasTikTok() != null) existingSocial.setHasTikTok(incomingSocial.getHasTikTok());
+                if (incomingSocial.getHasSnapchat() != null) existingSocial.setHasSnapchat(incomingSocial.getHasSnapchat());
+                if (incomingSocial.getHasYouTube() != null) existingSocial.setHasYouTube(incomingSocial.getHasYouTube());
+                if (incomingSocial.getHasGithub() != null) existingSocial.setHasGithub(incomingSocial.getHasGithub());
+            }
+        }
+
+        if (userInfoData.getIdentity() != null) {
+            User_Info_Identity incomingIdentity = userInfoData.getIdentity();
+            User_Info_Identity existingIdentity = existingUserInfo.getIdentity();
+
+            if (existingIdentity == null) {
+                incomingIdentity.setUser_info(existingUserInfo);
+                existingUserInfo.setIdentity(incomingIdentity);
+            } else {
+                if (incomingIdentity.getFirstName() != null) existingIdentity.setFirstName(incomingIdentity.getFirstName());
+                if (incomingIdentity.getLastName() != null) existingIdentity.setLastName(incomingIdentity.getLastName());
+                if (incomingIdentity.getAddress() != null) existingIdentity.setAddress(incomingIdentity.getAddress());
+                if (incomingIdentity.getZipCode() != null) existingIdentity.setZipCode(incomingIdentity.getZipCode());
+                if (incomingIdentity.getState() != null) existingIdentity.setState(incomingIdentity.getState());
+                if (incomingIdentity.getDob() != null) existingIdentity.setDob(incomingIdentity.getDob());
+                if (incomingIdentity.getPhoneNumber() != null) existingIdentity.setPhoneNumber(incomingIdentity.getPhoneNumber());
+                if (incomingIdentity.getEmail() != null) existingIdentity.setEmail(incomingIdentity.getEmail());
+                if (incomingIdentity.getIsRenting() != null) existingIdentity.setIsRenting(incomingIdentity.getIsRenting());
+                if (incomingIdentity.getHasSocialSecurityNumber() != null) existingIdentity.setHasSocialSecurityNumber(incomingIdentity.getHasSocialSecurityNumber());
+                if (incomingIdentity.getHasDriversLicence() != null) existingIdentity.setHasDriversLicence(incomingIdentity.getHasDriversLicence());
+                if (incomingIdentity.getHasPassport() != null) existingIdentity.setHasPassport(incomingIdentity.getHasPassport());
+            }
+        }
+        User_Info_AiResponse existingAiResponse = existingUserInfo.getAiResponse();
+        if (existingAiResponse == null) {
+            existingAiResponse = new User_Info_AiResponse();
+            existingUserInfo.setAiResponse(existingAiResponse);
+        }
+
+        if (userInfoData.getAiResponse() != null) {
+            User_Info_AiResponse incomingAi = userInfoData.getAiResponse();
+
+            if (incomingAi.getFinancialResponse() != null)
+                existingAiResponse.setFinancialResponse(incomingAi.getFinancialResponse());
+
+            if (incomingAi.getSocialResponse() != null)
+                existingAiResponse.setSocialResponse(incomingAi.getSocialResponse());
+
+            if (incomingAi.getIdentityResponse() != null)
+                existingAiResponse.setIdentityResponse(incomingAi.getIdentityResponse());
+        }
+
+        // Save the AI response first, since User_Info references it
+        aiResponseRepository.save(existingAiResponse);
+
+        userInfoRepository.save(existingUserInfo);
+        return new ResponseEntity<>(existingUserInfo, HttpStatus.OK);
     }
 }
 
