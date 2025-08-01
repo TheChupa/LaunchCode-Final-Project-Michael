@@ -2,14 +2,14 @@ export default class Social {
 
     constructor(id, motherMaidenName, fatherMiddleName, firstVehicle, numOfSiblings, elementarySchool, firstPetsName, hasLinkedIn, hasFaceBook, hasInstagram, hasTwitter, hasTikTok, hasSnapchat, hasYouTube, hasGithub) {
         this.id = id;
-        this.motherMaidenName = motherMaidenName;
+        this.motherMaidenName = motherMaidenName;//No Booleans
         this.fatherMiddleName = fatherMiddleName;
         this.firstVehicle = firstVehicle;
         this.numOfSiblings = numOfSiblings;
         this.elementarySchool = elementarySchool;
         this.firstPetsName = firstPetsName;
-        this.hasLinkedIn = hasLinkedIn;
-        this.hasFaceBook = hasFaceBook;
+        this.hasLinkedIn = hasLinkedIn; // Booleans
+        this.hasFaceBook = hasFaceBook; 
         this.hasInstagram = hasInstagram;
         this.hasTwitter = hasTwitter;
         this.hasTikTok = hasTikTok;
@@ -23,7 +23,8 @@ export default class Social {
 
         let count = 0;
 
-        let worth = count * 2;
+    
+
 
         const socialProfiles = [
             this.hasLinkedIn,
@@ -41,7 +42,7 @@ export default class Social {
             if (social) {
                 count++;
             }
-            // Calculate worth based on social factors
+            
         });
 
         return count * 2;

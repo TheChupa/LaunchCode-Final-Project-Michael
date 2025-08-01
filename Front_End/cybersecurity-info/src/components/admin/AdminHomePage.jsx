@@ -11,7 +11,7 @@ const AdminHomePage = () => {
           <div className="flex-items">
             <HomePageCard
               title="View Power Grid"
-              description="Find total megawatts of users"
+              description=""
               onClick={() => {
                 console.log("Button clicked!");
                 navigate("/power-grid");
@@ -24,12 +24,12 @@ const AdminHomePage = () => {
               description="tie this to Darkweb things for sale using math"
               onClick={() => {
                 console.log("Button clicked!");
-                navigate("/Admin");
+                navigate("/power-grid/value");
               }}
             />
             <HomePageCard
-              title="Make a Human Battery"
-              description="Gotta Keep the lights on!"
+              title="Teachings of AI Morpheus"
+              description="!"
               onClick={() => {
                 console.log("Button clicked!");
                 navigate("/Admin");
