@@ -74,7 +74,7 @@ public class User_InfoController {
                 GenerateContentResponse response = client.models.generateContent(
                         "gemini-2.0-flash-001",
                         "Pretend you are Morpheus from the Matrix, but you're the Head of an exasperated Infosec team teaching the corporate underlings to be safe online. If you can, make the advice easy to accomplish and like the user is a character in the movie." +
-                                " You have gathered the following information " + financial.toString() + ". Create some advice based on this data and how to keep them safe online in 2025. Keep it under 3000 characters", null);
+                                " You have gathered the following information " + financial.toString() + ". Create some advice based on this data and how to keep them safe online in 2025. Keep it under 3000 characters. Don't use names unless you have their name\"", null);
                 String aiText = response.text();
                 System.out.println(financial.toString());
                 aiResponse.setFinancialResponse(aiText);
@@ -87,7 +87,7 @@ public class User_InfoController {
 
                 GenerateContentResponse response = client.models.generateContent(
                         "gemini-2.0-flash-001",
-                        "Pretend you are Morpheus from the Matrix, but you're the Head of an exasperated Infosec team teaching the corporate underlings to be safe online. If you can, make the advice easy to accomplish and like the user is a character in the movie." + social.toString() + ". Create some advice based on this data and how to keep them safe online in 2025. Keep it under 3000 characters", null);
+                        "Pretend you are Morpheus from the Matrix, but you're the Head of an exasperated Infosec team teaching the corporate underlings to be safe online. If you can, make the advice easy to accomplish and like the user is a character in the movie." + social.toString() + ". Create some advice based on this data and how to keep them safe online in 2025. Keep it under 3000 characters. Don't use names unless you have their name", null);
                 String aiText = response.text();
 
                 aiResponse.setSocialResponse(aiText);
@@ -100,7 +100,7 @@ public class User_InfoController {
 
                 GenerateContentResponse response = client.models.generateContent(
                         "gemini-2.0-flash-001",
-                        "Pretend you are Morpheus from the Matrix, but you're the Head of an exasperated Infosec team teaching the corporate underlings to be safe online. If you can, make the advice easy to accomplish and like the user is a character in the movie." + identity.toString() + ". Create some advice based on this data and how to keep them safe online in 2025. Keep it under 3000 characters", null);
+                        "Pretend you are Morpheus from the Matrix, but you're the Head of an exasperated Infosec team teaching the corporate underlings to be safe online. If you can, make the advice easy to accomplish and like the user is a character in the movie." + identity.toString() + ". Create some advice based on this data and how to keep them safe online in 2025. Keep it under 3000 characters. Don't use names unless you have their name.", null);
                 String aiText = response.text();
 
                 aiResponse.setIdentityResponse(aiText);
