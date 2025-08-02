@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { ReUsableButton } from "../assets/utility";
+
 
 const AboutMe = () => {
   const [formData, setFormData] = useState({
@@ -64,7 +64,7 @@ const AboutMe = () => {
           <br />
           <br />
 
-          <ReUsableButton path="/Thank-you " name="submit" type="submit" />
+          
         </form>
       </div>
 

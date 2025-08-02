@@ -311,7 +311,12 @@ background-color: rgba(255, 255, 255, 0.9);
   height: auto;
   display: block;
   margin: 0 auto 12px auto;
+   position: relative;
+  z-index: 3;
   cursor: pointer;
+}
+.morpheus-card {
+  position: relative;
 }
 
 

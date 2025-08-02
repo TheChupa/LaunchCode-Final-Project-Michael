@@ -1,4 +1,4 @@
-import { ReUsableButton } from "../assets/utility";
+
 
 const ResourcesPage = () => {
   //todo:pass data into form and return it in nice organized blocks. Will expand infinetely(as i add more) for each type of safety, email safety/scams, address safety/scams, personal data(maidenname, pet, kind of car "quizzez") safety/scams.
@@ -113,7 +113,7 @@ const ResourcesPage = () => {
       </div>
       <br />
 
-      <ReUsableButton path="/" name="Click to go back, but you will have to change your name." className="resources-button" />
+      
     </main>
   );
 };

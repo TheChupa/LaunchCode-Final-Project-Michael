@@ -3,9 +3,9 @@ import ResourcesPage from "./pages/ResourcesPage.jsx";
 import "./App.css";
 
 import AboutMe from "./pages/AboutMe.jsx";
-import NavBar from "./pages/home-page/Navbar.jsx";
+import NavBar from "./pages/header/footer/Navbar.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Footer from "./pages/home-page/Footer.jsx";
+import Footer from "./pages/header/footer/Footer.jsx";
 
 import ThankYouPage from "./pages/about-me/ThankYouPage.jsx";
 import AdminHomePage from "./components/admin/AdminHomePage.jsx";
