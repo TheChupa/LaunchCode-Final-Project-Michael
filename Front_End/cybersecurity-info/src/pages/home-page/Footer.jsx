@@ -5,24 +5,24 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <main className="Footer">
+    <footer className="Footer">
       <Navbar
         bg="myColorFooter"
         data-bs-theme="light"
         fixed="bottom"
         expand="sm"
-        className="bg-body-tertiary"
+        className="bg-body-tertiary footer-navbar"
       >
         <Container>
-          <Navbar.Brand>&copy;🐇</Navbar.Brand>
+          <Navbar.Brand><Nav.Link className="matrix-shimmer" as={Link} to="/AboutMe">
+              &copy;🐇
+            </Nav.Link></Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link as={Link} to="/Audit">
-              Reset the Matrix
-            </Nav.Link>
+            
           </Nav>
         </Container>
       </Navbar>
-    </main>
+    </footer>
   );
 }
 

@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 function NavBar() {
   return (
     <Navbar
+    padding-top="64px"
       sticky="top"
       data-bs-theme=""
       bg="myColorNavBar"

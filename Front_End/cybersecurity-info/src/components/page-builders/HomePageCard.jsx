@@ -1,24 +1,11 @@
-const HomePageCard = ({ title, description, onClick}) => {
- 
-   
-   
-
-    return (
-
-
-
-        <div className="homepage-card"
-        onClick={onClick}>
-           
-            <h2>{title}</h2>
-            <h3>{description}</h3>    
-        </div>
-
-
-     
-        
-    )
-
-};
-
+const HomePageCard = ({ title, description, onClick, className, shimmerImage }) => (
+  <div
+    className={`homepage-card ${className || ""}`}
+    onClick={onClick}
+    style={ shimmerImage ? { '--shimmer-image': `url(${shimmerImage})` } : {} }
+  >
+    <h2>{title}</h2>
+    {description && <p>{description}</p>}
+  </div>
+);
 export default HomePageCard;

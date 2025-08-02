@@ -15,6 +15,7 @@ const PowerGridValuePage = ({ userinfo }) => {
 
   return (
    <div className = "background">
+   <div className = "main-content">
    <div className = "power-grid-header">
       <h2>Power Grid Value Page</h2>
       <p>Total System Worth: ${totalSystemWorth}</p>
@@ -28,6 +29,7 @@ const PowerGridValuePage = ({ userinfo }) => {
       justifyItems: "center",
     }}>
       {powerGridCells}
+      </div>
     </div>
     </div>
     

@@ -1,3 +1,31 @@
+/* background for all pages */
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  width: 100vw;
+  background-image: url("/36013.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  z-index: -1;
+}
+
+/* Card Styles */
+
+.homepage-card.matrix-shimmer {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Navbar and Footer Styles */
+
+
 .bg-myColorNavBar {
   background: radial-gradient(
     circle at 69% 74%,
@@ -14,41 +42,49 @@
     rgba(89, 68, 72, 1)
   );
 }
+.footer-navbar {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.main-content {
+  padding-bottom: 64px; /* Adjust to match your footer height */
+  box-sizing: border-box;
+}
+
+
+/* Button Effects */
+
+.matrix-shimmer {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.matrix-shimmer::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--shimmer-image, url('/matrix_button.gif')) center center / cover no-repeat;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.5;
+  animation: gif-shimmer-pulse 10s linear infinite;
+  filter: brightness(0.5);
+}
+
+@keyframes gif-shimmer-fade {
+  0% { opacity: 0; }
+  10% { opacity: 1; }   
+  70% { opacity: 1; }    
+  90% { opacity: 0; }    
+  100% { opacity: 0; }
+}
 
 /*HomePage*/
 
-
-
-
-
-.red-button-homepage {
-  grid-area: red-button-homepage;
-  position: absolute;
-  right: 0;
-  bottom: 5;
-  align-self: end;
-  background-color: #cd081b;
-  padding: 25px 25px;
-  border-radius: 10px;
-}
-
-.blue-button-homepage {
-  background-color: #031fc0;
-  padding: 25px 25px;
-  border-radius: 10px;
-
-  grid-area: blue-button-homepage;
-  position: absolute;
-  left: 0;
-  bottom: 5;
-  align-self: start;
-}
-
-.lead-to-buttons-homepage {
-  grid-area: lead-to-buttons-homepage;
-  border: outset #2d7842;
-  align-self: start;
-}
 
 .flex-container {
   display: flex;
@@ -98,20 +134,7 @@
 border: 6px outset #0B802B
 }
 
-/* background for all pages */
 
-.background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-height: 100%;
-  width: 100vw;
-  background-image: url("/36013.gif");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: -1;
-}
 
 
 
@@ -148,6 +171,8 @@ background-color: rgba(255, 255, 255, 0.9);
 
 .power-grid-header {
   width: 100%;
+  margin-top: 64px;
+  padding-top: 64px; /* Adjust this value to match your navbar height */
   background-color: #f9f9f9;
   padding: 5px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -202,18 +227,11 @@ background-color: rgba(255, 255, 255, 0.9);
   border-radius: 1px;
 }
 
-@keyframes blinkGreen {
-  0% {
-    box-shadow: 0 0 0 rgba(0, 255, 0, 0);
-  }
-  50% {
-    box-shadow: 0 0 25px 10px rgba(0, 255, 0, 0.9);
-  }
-  100% {
-    box-shadow: 0 0 0 rgba(0, 255, 0, 0);
-  }
-}
 
+.main-content {
+  padding-bottom: 64px; /* Adjust to match your footer's height */
+  box-sizing: border-box;
+}
 /* User Pages Styling */
 
 .form-container {
@@ -277,6 +295,23 @@ background-color: rgba(255, 255, 255, 0.9);
 
 @keyframes spin {
   to { transform: rotate(360deg); }
+}
+
+.morpheus-container {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 16px 24px;
+  display: inline-block;
+  margin-top: 16px;
+}
+
+.morpheus-image {
+  width: 350px;
+  height: auto;
+  display: block;
+  margin: 0 auto 12px auto;
+  cursor: pointer;
 }
 
 

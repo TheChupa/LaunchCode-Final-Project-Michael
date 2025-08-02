@@ -9,11 +9,13 @@ const MorpheusRamblingPage = (AiResponses) => {
 
   return (
     <div className="background">
+    <div className="main-content">
     <div className="power-grid-header">
       <h1>Teachings of AI Morpheus</h1>
       <p>Observe to the teachings of AI Morpheus.</p>
       </div>
-      <div>{MorpheusTeachings}</div>    
+      <div>{MorpheusTeachings}</div>   
+      </div> 
     </div>
   );
 };

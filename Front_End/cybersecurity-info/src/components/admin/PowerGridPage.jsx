@@ -108,6 +108,7 @@ const PowerGridPage = ({ userinfo, refetch }) => {
 
     return (
       <div className="background">
+      <div className="main-content">
       <div className = "power-grid-header">
         <h2>List of Batteries </h2>
         </div>
@@ -136,6 +137,7 @@ const PowerGridPage = ({ userinfo, refetch }) => {
         )}
         </div>
         <button onClick={() => navigate("/admin")}>GO BACK</button>
+        </div>
       </div>
     );
   };

@@ -17,8 +17,8 @@ const PublicHomePage = () => {
         <div className="flex-container">
           <div className="flex-items">
             <HomePageCard
-              title="Welcome your user_info id is:"
-              description={userId}
+              title="Welcome!"
+              description="Explore the world of AI SLop CyberSecurity Training"
               onClick={() => {
                 console.log("Button clicked!");
                 navigate("/resources/AllResources");
@@ -28,15 +28,19 @@ const PublicHomePage = () => {
           <div className="flex-items">
             <HomePageCard
               title="Train with AI Morpheus"
-              description="Gotta Keep the lights on!"
+              description=""
+              className="matrix-shimmer"
+              shimmerImage="morpheus_training.gif"
               onClick={() => {
                 console.log("Button clicked!");
                 navigate("/train-with-AiMorpheus", { state: { userId } });
               }}
             />
             <HomePageCard
-              title="Learn more about Cyber Threats"
-              description=""
+              title="Curated CyberThreat Resources"
+              description="Human compiled"
+              className="matrix-shimmer"
+              shimmerImage="red-pill-button.gif"
               onClick={() => {
                 console.log("Button clicked!");
                 navigate("/resources/AllResources");
@@ -46,7 +50,9 @@ const PublicHomePage = () => {
           <div className="flex-items">
             <HomePageCard
               title="Learn more about the Creator"
-              description=""
+              className="matrix-shimmer"
+              shimmerImage="Creator_button.gif"
+              description="I'm real, I promise!"
               onClick={() => {
                 console.log("Button clicked!");
                 navigate("/AboutMe");
@@ -55,6 +61,8 @@ const PublicHomePage = () => {
             <HomePageCard
               title="Power Off."
               description={"Log-Out"}
+              className="matrix-shimmer"
+              shimmerImage="logout-button.gif"
               onClick={() => {
                 console.log("Button clicked!");
                 navigate("/");

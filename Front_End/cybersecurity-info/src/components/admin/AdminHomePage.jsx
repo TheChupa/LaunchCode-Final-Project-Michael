@@ -17,7 +17,9 @@ const AdminHomePage = () => {
           </div>
           <div className="flex-items">
             <HomePageCard
-              title="How much is a battery worth?"
+              title="Check Power Grid"
+              className="matrix-shimmer"
+              shimmerImage="power-grid-value.gif"
               onClick={() => {
                 navigate("/power-grid/value");
               }}
@@ -25,6 +27,8 @@ const AdminHomePage = () => {
             <HomePageCard
               title="Teachings of AI Morpheus"
               description="!"
+              className="matrix-shimmer"
+              shimmerImage="mastered-morpheus-teachings.gif"
               onClick={() => {
                 navigate("/AI-Morpheus");
               }}
@@ -33,12 +37,16 @@ const AdminHomePage = () => {
           <div className="flex-items">
             <HomePageCard
               title="Modify Power Grid"
+              className="matrix-shimmer"
+              shimmerImage="neo-glasses-matrixtext.gif"
               onClick={() => {
                 navigate("/power-grid");
               }}
             />
             <HomePageCard
               title="Power Off"
+              className="matrix-shimmer"
+              shimmerImage="logout-admin.gif"
               description={""}
               onClick={() => {               
                 navigate("/");

@@ -16,6 +16,7 @@ const LandingPage = () => {
           </div>
           <div className="flex-items">
             <HomePageCard
+            className="matrix-shimmer"
               title="Returning User"
               description="Click to Login"
               onClick={() => {
@@ -24,6 +25,8 @@ const LandingPage = () => {
               }}
             />
             <HomePageCard
+              className="matrix-shimmer"
+            
               title="New User"
               description="Click to Create Account"
               onClick={() => {
