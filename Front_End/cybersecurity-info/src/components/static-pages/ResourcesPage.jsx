@@ -1,5 +1,3 @@
-
-
 const ResourcesPage = () => {
   //todo:pass data into form and return it in nice organized blocks. Will expand infinetely(as i add more) for each type of safety, email safety/scams, address safety/scams, personal data(maidenname, pet, kind of car "quizzez") safety/scams.
   //Organize this date in video boxes on top right of each div, and text on left  hand side
@@ -82,24 +80,15 @@ const ResourcesPage = () => {
           How They get your data
         </a>
         <br />
-        <a
-          href="https://haveibeenpwned.com/"
-          target="_blank"
-        >
+        <a href="https://haveibeenpwned.com/" target="_blank">
           Have I been Pwned?
         </a>
-        <br/>
-        <a
-          href="https://databreach.com/"
-          target="_blank"
-        >
+        <br />
+        <a href="https://databreach.com/" target="_blank">
           Data Breach Check
         </a>
         <br />
-        <a
-          href="https://bitwarden.com/products/personal/"
-          target="_blank"
-        >
+        <a href="https://bitwarden.com/products/personal/" target="_blank">
           Best Password Manager
         </a>
         <br />
@@ -112,8 +101,6 @@ const ResourcesPage = () => {
         <br />
       </div>
       <br />
-
-      
     </main>
   );
 };

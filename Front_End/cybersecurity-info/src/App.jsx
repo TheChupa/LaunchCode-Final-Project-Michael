@@ -1,17 +1,17 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import ResourcesPage from "./pages/ResourcesPage.jsx";
+import ResourcesPage from "./components/static-pages/ResourcesPage.jsx";
 import "./App.css";
 
-import AboutMe from "./pages/AboutMe.jsx";
-import NavBar from "./pages/header/footer/Navbar.jsx";
+import AboutMe from "./components/static-pages/AboutMe.jsx";
+import NavBar from "./components/static-pages/NavBar.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Footer from "./pages/header/footer/Footer.jsx";
+import Footer from "./components/static-pages/Footer.jsx";
 
-import ThankYouPage from "./pages/about-me/ThankYouPage.jsx";
+import ThankYouPage from "./components/static-pages/ThankYouPage.jsx";
 import AdminHomePage from "./components/admin/AdminHomePage.jsx";
 import PublicHomePage from "./components/public/PublicHomePage.jsx";
 
-import LandingPage from "./components/landingpage/LandingPage.jsx";
+import LandingPage from "./components/static-pages/LandingPage.jsx";
 import LoginPageNew from "./components/public/LoginPageNew.jsx";
 import LoginPageReturning from "./components/public/LoginPageReturning.jsx";
 import { useEffect, useState } from "react";
