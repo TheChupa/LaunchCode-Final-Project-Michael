@@ -20,15 +20,15 @@ function NavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link as={Link} to="/">
+            {/* <Nav.Link as={Link} to="/">
               Home
-            </Nav.Link>
+            </Nav.Link> */}
             <Nav.Link as={Link} to="/resources/AllResources">
               Resources
             </Nav.Link>
-            <Nav.Link as={Link} to="/AboutMe">
+            {/* <Nav.Link as={Link} to="/AboutMe">
               About Me
-            </Nav.Link>
+            </Nav.Link> */}
           </Nav>
         </Navbar.Collapse>
       </Container>
