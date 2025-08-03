@@ -1,13 +1,15 @@
+import "./resourcespage.css";
 const ResourcesPage = () => {
   //todo:pass data into form and return it in nice organized blocks. Will expand infinetely(as i add more) for each type of safety, email safety/scams, address safety/scams, personal data(maidenname, pet, kind of car "quizzez") safety/scams.
   //Organize this date in video boxes on top right of each div, and text on left  hand side
 
   return (
-    <main className="resources-page">
-      <div className="title-resources">
-        <h2>Resources</h2>
+    <main className="background">
+      <div className="resources-flex-container">
+      
       </div>
-      <div className="wiki-resources">
+      <div className="resources-flex-columns">
+      <div className="resources-section">
         <h2>Wikipedia Links</h2>
         <br />
         <a
@@ -49,7 +51,7 @@ const ResourcesPage = () => {
         </a>
         <br />
       </div>
-      <div className="serious-resources">
+      <div className="resources-section">
         <h2>Serious Stuff</h2>
         <br />
         <a
@@ -101,6 +103,7 @@ const ResourcesPage = () => {
         <br />
       </div>
       <br />
+      </div>
     </main>
   );
 };

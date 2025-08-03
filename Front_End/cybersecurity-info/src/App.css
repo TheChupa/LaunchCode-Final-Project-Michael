@@ -53,7 +53,7 @@
 }
 
 
-/* Button Effects */
+/* Shimmer Effects */
 
 .matrix-shimmer {
   position: relative;
@@ -322,30 +322,111 @@ background-color: rgba(255, 255, 255, 0.9);
 
 /* About Me Page */
 
-.about-me {
+/* Add these styles to your App.css or AboutMe.css */
+
+/* Flex background to center content */
+.about-me-bg-flex {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: inherit;
+}
+
+.about-me-content {
+  width: 80vw;
+  height: 80vh;
+  max-width: 900px;
+  max-height: 900px;
+  background: rgba(255,255,255,0.92);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  border: 20px inset #188547;
+  padding: 2rem 2.5rem;
+  overflow-y: auto;
 }
-.text-about-me {
-  width: 100%;
-  margin: 0;
+
+.about-me-header {
+  text-align: center;
+  margin-bottom: 1rem;
 }
-.form-about-me {
-  width: 100%;
-  margin: 0;
+
+.about-me-subhead {
+  font-size: 1.1rem;
+  color: #444;
 }
-.closer-about-me {
-  width: 100%;
-  margin: 0;
+
+.about-me-image-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
 }
 
 .dog-photo {
-  width: 200px;
-  height: 200px;
-  justify-content: center;
+  max-width: 220px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+}
+
+.form-about-me {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 1.5rem auto;
+  background: rgba(245,245,245,0.85);
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+}
+
+.form-about-me h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: #2d7842;
+}
+
+.form-about-me label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.form-about-me textarea,
+.form-about-me input[type="email"] {
+  width: 100%;
+  margin-top: 0.3rem;
+  margin-bottom: 0.7rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.form-about-me button {
+  background: #2d7842;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.form-about-me button:hover {
+  background: #256232;
+}
+
+.closer-about-me {
+  margin-top: auto;
+  text-align: center;
+  color: #333;
+  font-size: 1rem;
+  padding-top: 1.5rem;
 }
 
 /* Resources page */

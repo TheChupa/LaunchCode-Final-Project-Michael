@@ -1,0 +1,36 @@
+.aboutme-flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  background: inherit;
+  gap: 2vh;
+  padding-top: 80px;
+  padding-bottom:80px ;
+}
+
+.aboutme-section {
+  background: rgba(255,255,255,0.92);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  width: 80vw;
+  max-width: 900px;
+  min-width: 280px;
+  padding: 2rem;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dog-photo {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  justify-content: center;
+}
