@@ -26,9 +26,9 @@ function NavBar() {
             <Nav.Link as={Link} to="/resources/AllResources">
               Resources
             </Nav.Link>
-            {/* <Nav.Link as={Link} to="/AboutMe">
+            <Nav.Link as={Link} to="/AboutMe">
               About Me
-            </Nav.Link> */}
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
