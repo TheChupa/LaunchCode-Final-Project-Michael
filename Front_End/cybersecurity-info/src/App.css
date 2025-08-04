@@ -1,19 +1,4 @@
-/* background for all pages */
 
-.background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-height: 100vh;
-  width: 100vw;
-  background-image: url("/36013.gif");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  box-sizing: border-box;
-  overflow-x: hidden;
-  z-index: -1;
-}
 
 /* Card Styles */
 
@@ -24,7 +9,6 @@
 }
 
 /* Navbar and Footer Styles */
-
 
 .bg-myColorNavBar {
   background: radial-gradient(
@@ -48,10 +32,9 @@
 }
 
 .main-content {
-  padding-bottom: 64px; /* Adjust to match your footer height */
+  padding-bottom: 64px; 
   box-sizing: border-box;
 }
-
 
 /* Shimmer Effects */
 
@@ -64,10 +47,12 @@
 .matrix-shimmer::after {
   content: "";
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background: var(--shimmer-image, url('/matrix_button.gif')) center center / cover no-repeat;
+  background: var(--shimmer-image, url("/matrix_button.gif")) center center /
+    cover no-repeat;
   pointer-events: none;
   z-index: 2;
   opacity: 0.5;
@@ -76,53 +61,58 @@
 }
 
 @keyframes gif-shimmer-fade {
-  0% { opacity: 0; }
-  10% { opacity: 1; }   
-  70% { opacity: 1; }    
-  90% { opacity: 0; }    
-  100% { opacity: 0; }
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /*HomePage*/
 
-
 .flex-container {
   display: flex;
   flex-direction: column;
-  gap: 2rem; /* space between rows */
+  gap: 2rem; 
   max-width: 700px;
   margin: 0 auto;
   padding: 1rem;
-  height:  100vh;
+  height: 100vh;
   justify-content: center;
 }
 
 .flex-items:nth-child(1) {
-   display: flex;            /* changed from block to flex */
+  display: flex; 
   justify-content: center;
-
 }
 
 .flex-items:nth-child(2) {
-  display: flex;            /* flex row by default */
-  justify-content: space-between;  /* spread cards */
+  display: flex; 
+  justify-content: space-between; 
   gap: 2rem;
 }
 
 .flex-items:nth-child(3) {
-  display: flex;            /* flex row by default */
-  justify-content: space-between;  /* spread cards */
+  display: flex; 
+  justify-content: space-between;
   gap: 2rem;
 }
 
-
 .homepage-card {
-   width: 300px;
+  width: 300px;
   height: 200px;
   background: lightgray;
   padding: 1rem;
-  
-  /* Optional centering of card content */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -130,13 +120,9 @@
   text-align: center;
   font-weight: bold;
   font-size: 1.2rem;
-  border-radius: 11%; 
-border: 6px outset #0B802B
+  border-radius: 11%;
+  border: 6px outset #0b802b;
 }
-
-
-
-
 
 /* Login-Pages*/
 .login-page-container {
@@ -150,7 +136,7 @@ border: 6px outset #0B802B
   background-position: center;
 }
 .login-page-card {
-background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
@@ -172,14 +158,14 @@ background-color: rgba(255, 255, 255, 0.9);
 .power-grid-header {
   width: 100%;
   margin-top: 64px;
-  padding-top: 64px; /* Adjust this value to match your navbar height */
+  padding-top: 64px; 
   background-color: #f9f9f9;
   padding: 5px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
   text-align: center;
-  border-radius:  0px;
-   background-color: rgba(249, 249, 249, 0.938);
+  border-radius: 0px;
+  background-color: rgba(249, 249, 249, 0.938);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 }
@@ -218,8 +204,9 @@ background-color: rgba(255, 255, 255, 0.9);
   border: 2px solid lime;
   animation: blinkGreen 1s infinite;
   transform: scale(1.03);
-  box-shadow: 0 6px 12px rgba(0, 102, 128, 0.3); 
-  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, border 0.3s;
+  box-shadow: 0 6px 12px rgba(0, 102, 128, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s,
+    border 0.3s;
 }
 .power-grid-cell-container {
   background-color: rgba(255, 255, 255, 0.9);
@@ -227,9 +214,8 @@ background-color: rgba(255, 255, 255, 0.9);
   border-radius: 1px;
 }
 
-
 .main-content {
-  padding-bottom: 64px; /* Adjust to match your footer's height */
+  padding-bottom: 64px;
   box-sizing: border-box;
 }
 /* User Pages Styling */
@@ -254,10 +240,7 @@ background-color: rgba(255, 255, 255, 0.9);
   background: linear-gradient(90deg, #e8ffe8 0%, #f8f8ff 100%);
   border-left: 8px solid #2d7842;
   border-radius: 12px;
-  
-  
   position: relative;
-  
 }
 
 .loading-overlay {
@@ -277,7 +260,7 @@ background-color: rgba(255, 255, 255, 0.9);
   background: #fff;
   padding: 32px 48px;
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -294,13 +277,15 @@ background-color: rgba(255, 255, 255, 0.9);
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .morpheus-container {
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   padding: 16px 24px;
   display: inline-block;
   margin-top: 16px;
@@ -311,7 +296,7 @@ background-color: rgba(255, 255, 255, 0.9);
   height: auto;
   display: block;
   margin: 0 auto 12px auto;
-   position: relative;
+  position: relative;
   z-index: 3;
   cursor: pointer;
 }
@@ -319,12 +304,8 @@ background-color: rgba(255, 255, 255, 0.9);
   position: relative;
 }
 
-
 /* About Me Page */
 
-/* Add these styles to your App.css or AboutMe.css */
-
-/* Flex background to center content */
 .about-me-bg-flex {
   min-height: 100vh;
   min-width: 100vw;
@@ -339,9 +320,9 @@ background-color: rgba(255, 255, 255, 0.9);
   height: 80vh;
   max-width: 900px;
   max-height: 900px;
-  background: rgba(255,255,255,0.92);
+  background: rgba(255, 255, 255, 0.92);
   border-radius: 18px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -368,17 +349,17 @@ background-color: rgba(255, 255, 255, 0.9);
 .dog-photo {
   max-width: 220px;
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
 }
 
 .form-about-me {
   width: 100%;
   max-width: 400px;
   margin: 0 auto 1.5rem auto;
-  background: rgba(245,245,245,0.85);
+  background: rgba(245, 245, 245, 0.85);
   border-radius: 10px;
   padding: 1rem 1.5rem;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
 }
 
 .form-about-me h2 {
@@ -429,70 +410,6 @@ background-color: rgba(255, 255, 255, 0.9);
   padding-top: 1.5rem;
 }
 
-/* Resources page */
-
-.resources-page {
-  display: grid;
-  grid-template-columns: 1.3fr 1.4fr;
-  grid-template-rows: 0.5fr 1.4fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "title-resources title-resources"
-    "wiki-resources serious-resources";
-  border: 20px inset #188547;
-}
-
-.title-resources {
-  grid-area: title-resources;
-  border: 10px outset #2d7842;
-  display: flex;
-  align-content: center;
-  text-align: center;
-  justify-content: center;
-}
-
-.wiki-resources {
-  grid-area: wiki-resources;
-  border: 10px outset #2d7842;
-  align-content: center;
-  text-align: center;
-  justify-content: center;
-}
-
-.serious-resources {
-  grid-area: serious-resources;
-  border: 10px outset #2d7842;
-  align-content: center;
-  text-align: center;
-  align-items: center;
-}
-
-.resources-button {
-  background-color: #2d7842;
-  padding: 25px 25px;
-  border-radius: 10px;
-  justify-content: center;
-}
-
-.resources-button:hover {
-  animation: flash-green 0.3s infinite;
-}
-
-.thank-you {
-  background-image: url(../ThankYou.jpg);
-
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 80vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
 
 /*Cyber Audit Landing*/
 .cyber-audit {
@@ -504,128 +421,3 @@ background-color: rgba(255, 255, 255, 0.9);
   flex-direction: column;
 }
 
-/* Training Room and Scam info cards*/
-
-.info-card {
-  border: 5px black;
-}
-
-.scamtype {
-  display: grid;
-  grid-template-columns: 15% 0.9fr 15%;
-  grid-template-rows: 15% 1fr 1fr 5%;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    ". . ."
-    ". scam-1 ."
-    ". button-box ."
-    ". . .";
-}
-
-.scam-1 {
-  grid-area: scam-1;
-  border: 15px outset #2d7842;
-
-  background-color: white;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.button-box {
-  grid-area: button-box;
-  border: 10px outset #2d7842;
-  display: flex;
-  align-items: flex;
-  justify-content: top;
-  text-align: center;
-  align-self: flex-start;
-  background-color: yellow;
-  justify-self: center;
-}
-
-.training-room {
-  justify-content: center;
-  text-align: center;
-  padding: 30px;
-  background-image: url("../matrixship.jpg");
-  background-position: stretch;
-  background-size: cover;
-}
-.training-gif {
-  padding: 150px;
-  border: 20px inset #188547;
-  background-color: white;
-}
-.dropdown {
-  border: 20px outset green;
-  background-color: white;
-  padding: 15px;
-}
-.info-card {
-  font-size: xx-small;
-}
-
-.dojo {
-  background-image: url(../dojobackground.jpg);
-  opacity: 7;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 80vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-
-.center-button {
-  justify-content: center;
-}
-
-.table-div {
-  border: 20px inset #188547;
-}
-
-/* hover effects for all buttons */
-
-@keyframes flash-green {
-  0% {
-    background-color: #2d7842;
-  }
-  50% {
-    background-color: #4caf50;
-  }
-  100% {
-    background-color: #2d7842;
-  }
-}
-
-@keyframes flash-red {
-  0% {
-    background-color: #cd081b;
-  }
-  50% {
-    background-color: #f77d85;
-  }
-  100% {
-    background-color: #cd081b;
-  }
-}
-
-@keyframes flash-blue {
-  0% {
-    background-color: #031fc0;
-  }
-  50% {
-    background-color: #0f8192;
-  }
-  100% {
-    background-color: #031fc0;
-  }
-}

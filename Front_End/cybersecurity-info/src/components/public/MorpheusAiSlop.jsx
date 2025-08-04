@@ -29,7 +29,7 @@ const MorpheusAiSlop = () => {
   }, [showInfo, userId]);
 
   return (
-    <div className ="background">
+    <main className ="background">
     <div className="main-content">
     <div className="power-grid-header">
       <h1>Welcome to AI Morpheus Training!</h1>
@@ -63,7 +63,7 @@ const MorpheusAiSlop = () => {
       )}
       </div>
       </div>
-    </div>
+    </main>
   );
 };
 

@@ -6,7 +6,7 @@ const LandingPage = () => {
 
   return (
     <>
-      <div className="background">
+      <main className="background">
         <div className="flex-container">
           <div className="flex-items">
             <HomePageCard
@@ -36,7 +36,7 @@ const LandingPage = () => {
             />
           </div>
         </div>
-      </div>
+      </main>
     </>
   );
 };

@@ -24,9 +24,10 @@ import {
 } from "./classes/exports.js";
 import NewUserDataForm from "./components/public/NewUserDataForm.jsx";
 import PowerGridPage from "./components/admin/PowerGridPage.jsx";
-import PowerGridValuePage from "./components/admin/PowerGridValuePage.jsx";
+import PowerGridValuePage from "./components/admin/BatteryFarm.jsx";
 import MorpheusRamblingPage from "./components/admin/MorpheusRamblingPage.jsx";
 import MorpheusAiSlop from "./components/public/MorpheusAiSlop.jsx";
+import BatteryFarm from "./components/admin/BatteryFarm.jsx";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -190,7 +191,7 @@ function App() {
           />
           <Route
             path="/power-grid/value"
-            element={<PowerGridValuePage userinfo={allUserInfo} />}
+            element={<BatteryFarm userinfo={allUserInfo} />}
           />
           <Route
             path="/AI-Morpheus"

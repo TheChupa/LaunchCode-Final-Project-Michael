@@ -6,7 +6,7 @@ const AdminHomePage = () => {
 
   return (
     <>
-      <div className="background">
+      <main className="background">
         <div className="flex-container">
           <div className="flex-items">
             <HomePageCard
@@ -54,7 +54,7 @@ const AdminHomePage = () => {
             />
           </div>
         </div>
-      </div>
+      </main>
     </>
   );
 };

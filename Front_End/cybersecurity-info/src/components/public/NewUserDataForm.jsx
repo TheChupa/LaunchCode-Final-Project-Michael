@@ -111,7 +111,7 @@ useEffect(() => {
 
     return(
         <>
-        <div className="background">
+        <main className="background">
         <div  className="new-user-data-form-container">
         <form onSubmit={handleSubmit} className="new-user-data-form">
        <div className= "grouping-box">
@@ -344,7 +344,7 @@ useEffect(() => {
           </div>
         )}
         </div>
-        </div>
+        </main>
         </>
     );
 

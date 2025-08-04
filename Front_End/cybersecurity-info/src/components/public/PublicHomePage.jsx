@@ -13,7 +13,7 @@ const PublicHomePage = () => {
 
   return (
     <>
-      <div className="background">
+      <main className="background">
         <div className="flex-container">
           <div className="flex-items">
             <HomePageCard
@@ -70,7 +70,7 @@ const PublicHomePage = () => {
             />
           </div>
         </div>
-      </div>
+      </main>
     </>
   );
 };

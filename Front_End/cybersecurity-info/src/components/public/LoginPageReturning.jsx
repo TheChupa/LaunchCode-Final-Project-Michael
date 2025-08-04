@@ -19,7 +19,7 @@ const LoginPageReturning = () => {
   };
 
   return (
-    <div className="background">
+    <main className="background">
     <div className= "login-page-container">
     <div className="login-page-card">
       <h1>Welcome Back!</h1>
@@ -53,7 +53,7 @@ const LoginPageReturning = () => {
     <button onClick={() => navigate(-1)}>Back</button>
     </div>
     </div>
-    </div>
+    </main>
   );
 };
 

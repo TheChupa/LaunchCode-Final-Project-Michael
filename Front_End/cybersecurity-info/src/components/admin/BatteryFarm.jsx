@@ -1,6 +1,6 @@
 import BatteryCard from "../page-builders/BatteryCard";
 
-const PowerGridValuePage = ({ userinfo }) => {
+const BatteryFarm = ({ userinfo }) => {
 
   const totalSystemWorth = userinfo.reduce((sum, user) => {
     const social = user.social.worthHowMuch() || 0;
@@ -14,7 +14,7 @@ const PowerGridValuePage = ({ userinfo }) => {
   ));
 
   return (
-   <div className = "background">
+   <main className = "background">
    <div className = "main-content">
    <div className = "power-grid-header">
       <h2>Power Grid Value Page</h2>
@@ -31,9 +31,9 @@ const PowerGridValuePage = ({ userinfo }) => {
       {powerGridCells}
       </div>
     </div>
-    </div>
+    </main>
     
   );
 };
 
-export default PowerGridValuePage;
+export default BatteryFarm;
