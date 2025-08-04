@@ -11,7 +11,7 @@ const PowerGridPage = ({ userinfo, refetch }) => {
     };
 
     try {
-      console.log("sending data to update user info:", JSON.stringify(newData));
+      
       const response = await fetch(`http://localhost:8080/api/user_info/update/${id}`,
         {
           method: "PATCH",
@@ -20,7 +20,6 @@ const PowerGridPage = ({ userinfo, refetch }) => {
         });
 
         const data = await response.json();
-        console.log("Updated user info:", data);
     
       if (response.ok) {
         if (typeof refetch === "function") refetch();

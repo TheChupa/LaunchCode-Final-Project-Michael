@@ -17,8 +17,6 @@ const MorpheusAiSlop = () => {
         const res = await fetch(`http://localhost:8080/api/ai-responses/${userId}/all`);
         const data = await res.json();
 
-
-        console.log("Fetched AI info:", data);
         setAiInfo(data);
       } catch (err) {
         console.error("Fetch error:", err);

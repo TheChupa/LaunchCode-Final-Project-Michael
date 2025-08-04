@@ -9,8 +9,8 @@ const LoginPageNew = () => {
   const [password, setPassword] = useState("");
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevents page reload
-    console.log("Form submitted!");
+    e.preventDefault();
+
 
     const newUser = {
       username,

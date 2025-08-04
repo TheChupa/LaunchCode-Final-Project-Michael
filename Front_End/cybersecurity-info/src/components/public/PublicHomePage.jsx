@@ -9,7 +9,7 @@ const PublicHomePage = () => {
   // If userId is not found, it will be undefined 
 
   const { userId } = location.state || {};
-  console.log("User ID from location state:", userId);
+  
 
   return (
     <>
@@ -20,7 +20,6 @@ const PublicHomePage = () => {
               title="Welcome!"
               description="Explore the world of AI SLop CyberSecurity Training"
               onClick={() => {
-                console.log("Button clicked!");
                 navigate("/resources/AllResources");
               }}
             />
@@ -32,7 +31,6 @@ const PublicHomePage = () => {
               className="matrix-shimmer"
               shimmerImage="morpheus_training.gif"
               onClick={() => {
-                console.log("Button clicked!");
                 navigate("/train-with-AiMorpheus", { state: { userId } });
               }}
             />
@@ -42,7 +40,6 @@ const PublicHomePage = () => {
               className="matrix-shimmer"
               shimmerImage="red-pill-button.gif"
               onClick={() => {
-                console.log("Button clicked!");
                 navigate("/resources/AllResources");
               }}
             />
@@ -54,7 +51,6 @@ const PublicHomePage = () => {
               shimmerImage="Creator_button.gif"
               description="I'm real, I promise!"
               onClick={() => {
-                console.log("Button clicked!");
                 navigate("/AboutMe");
               }}
             />
@@ -64,7 +60,6 @@ const PublicHomePage = () => {
               className="matrix-shimmer"
               shimmerImage="logout-button.gif"
               onClick={() => {
-                console.log("Button clicked!");
                 navigate("/");
               }}
             />

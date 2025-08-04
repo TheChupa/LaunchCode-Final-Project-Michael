@@ -9,8 +9,6 @@ const NewUserDataForm = () => {
     const { userId } = location.state || {};
     const navigate = useNavigate();
 
-    console.log("User ID:", userId);
-    
     const [formData, setFormData] = useState({
         userId: userId || null,
         social: {
@@ -92,11 +90,11 @@ useEffect(() => {
 
 
             if (!response.ok) {
-                console.log("Error submitting form:", data.id);
+   
                 await minWait;
                 alert("Error submitting form. Please try again.");
             } else {
-                console.log("Form submitted successfully:", data.id);
+
                 await minWait;
                 navigate("/PublicHomePage", { state: { userId: data.id } });
             }   

@@ -7,7 +7,7 @@ import NavBar from "./components/static-pages/NavBar.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./components/static-pages/Footer.jsx";
 
-import ThankYouPage from "./components/static-pages/ThankYouPage.jsx";
+
 import AdminHomePage from "./components/admin/AdminHomePage.jsx";
 import PublicHomePage from "./components/public/PublicHomePage.jsx";
 
@@ -24,7 +24,7 @@ import {
 } from "./classes/exports.js";
 import NewUserDataForm from "./components/public/NewUserDataForm.jsx";
 import PowerGridPage from "./components/admin/PowerGridPage.jsx";
-import PowerGridValuePage from "./components/admin/BatteryFarm.jsx";
+
 import MorpheusRamblingPage from "./components/admin/MorpheusRamblingPage.jsx";
 import MorpheusAiSlop from "./components/public/MorpheusAiSlop.jsx";
 import BatteryFarm from "./components/admin/BatteryFarm.jsx";
@@ -199,7 +199,6 @@ function App() {
           />
 
           <Route path="/AboutMe" element={<AboutMe />} />
-          <Route path="/Thank-you" element={<ThankYouPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>

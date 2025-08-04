@@ -20,7 +20,6 @@ const LandingPage = () => {
               title="Returning User"
               description="Click to Login"
               onClick={() => {
-                console.log("Button clicked!");
                 navigate("/log-in/returning");
               }}
             />
@@ -30,7 +29,6 @@ const LandingPage = () => {
               title="New User"
               description="Click to Create Account"
               onClick={() => {
-                console.log("Button clicked!");
                 navigate("log-in/new-user");
               }}
             />

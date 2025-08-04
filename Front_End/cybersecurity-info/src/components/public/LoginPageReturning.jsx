@@ -8,8 +8,7 @@ const LoginPageReturning = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted!");
-    console.log("Username:", username);
+
 
     if (username === "admin") {
       navigate("/admin");
