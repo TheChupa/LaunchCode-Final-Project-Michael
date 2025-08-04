@@ -44,7 +44,7 @@ function App() {
     try {
       let response = await fetch(`http://localhost:8080/api/user_info/details`);
       let data = await response.json();
-      console.log("Fetched user info JSON data:", data);
+   
 
       let financials = [];
       let socials = [];
