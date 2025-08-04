@@ -113,7 +113,7 @@ public class User_InfoController {
             return new ResponseEntity<>(Collections.singletonMap("response", "Error generating AI response"), HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
-        // Save only once after all responses are populated
+
 
         aiResponseRepository.save(aiResponse);
         user_info.setAiResponse(aiResponse);
@@ -228,7 +228,7 @@ public class User_InfoController {
                 existingAiResponse.setIdentityResponse(incomingAi.getIdentityResponse());
         }
 
-        // Save the AI response first, since User_Info references it
+
         aiResponseRepository.save(existingAiResponse);
 
         userInfoRepository.save(existingUserInfo);
