@@ -31,7 +31,7 @@ const MorpheusAiSlop = () => {
     <div className="main-content">
     <div className="power-grid-header">
       <h1>Welcome to AI Morpheus Training!</h1>
-      <p>Your user ID is: {userId}</p>
+      <p>AI Morpheus is a powerful AI that can analyze your data and provide insights on financial, social, and identity aspects.</p>
       <p>Click on the image below to see AI Morpheus' responses to your data.</p>
       </div>
       
