@@ -59,7 +59,12 @@ You will also need to request a [Gemini API key](https://aistudio.google.com/api
 
 
 
+
+
+
 Future Versions to Include:
+
+
 
 JWT Authentication 
 
