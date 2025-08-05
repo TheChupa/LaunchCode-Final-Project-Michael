@@ -1,20 +1,20 @@
 # LaunchCode Final Project
-LaunchCode project Front-end+Back-end
+
 
 
 Cyber-Audit Version 1.1 featuring AISlop Morpheus
 
-This is a full stack project made for LaunchCode.
+This is a full-stack project made for LaunchCode.
 
 
-This website is intended to be a simulation for what could occur when a user's information is lost/sold/stolen. A side effect can include a user realizing that many of the attack vectors are given away freely to Ecommerce, Social Media, Financial, and Government websites. The goal is to increase awareness and prevent users from becoming willing victims of cybercrime.
+This website is intended to be a simulation of what could occur when a user's information is lost/sold/stolen. A side effect can include a user realizing that many of the attack vectors are given away freely to e-commerce, Social Media, Financial, and Government websites. The goal is to increase awareness and prevent users from becoming willing victims of cybercrime.
 
 Includes an "admin" view to provide more context on how much user data IS worth.
 
 
 
 
-This project is build with:
+This project is built with:
 
 Front End:                                        
 
@@ -37,12 +37,16 @@ Google Gemini
 
 To install and use this:
 
-Back-END will need you to update a few things. In the application.properties folder there are several veriables that will need to be set.
+Back-end will need you to update a few things. In the application.properties folder, there are several variables that will need to be set.
 
 DB_HOST = Database hostname
+
 DB_PORT = Database port number
+
 DB_NAME = Name of Database in MySQL
-DB_USER = username of account to access MySQL
+
+DB_USER = username of the account to access MySQL
+
 DB_PASS = username password
 
 
@@ -55,10 +59,19 @@ You will also need to request a [Gemini API key](https://aistudio.google.com/api
 
 
 
+
+
+
 Future Versions to Include:
 
-JWT Authentication
-Dark Web Audit - Real Time check to actual data that's for sale
-Safety Score
+
+
+JWT Authentication 
+
+Dark Web Audit
+
+Safety Score 
+
 Buy Services
+
 Matrix-esque defence simulation 2D-RPG
