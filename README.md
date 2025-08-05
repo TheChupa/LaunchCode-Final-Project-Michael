@@ -61,8 +61,12 @@ You will also need to request a [Gemini API key](https://aistudio.google.com/api
 
 Future Versions to Include:
 
-JWT Authentication, 
-Dark Web Audit, 
-Safety Score, 
-Buy Services, 
+JWT Authentication 
+
+Dark Web Audit
+
+Safety Score 
+
+Buy Services
+
 Matrix-esque defence simulation 2D-RPG
