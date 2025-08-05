@@ -40,9 +40,13 @@ To install and use this:
 Back-end will need you to update a few things. In the application.properties folder, there are several variables that will need to be set.
 
 DB_HOST = Database hostname
+
 DB_PORT = Database port number
+
 DB_NAME = Name of Database in MySQL
+
 DB_USER = username of the account to access MySQL
+
 DB_PASS = username password
 
 
@@ -57,8 +61,8 @@ You will also need to request a [Gemini API key](https://aistudio.google.com/api
 
 Future Versions to Include:
 
-JWT Authentication
-Dark Web Audit - Real-time check to actual data that's for sale
-Safety Score
-Buy Services
+JWT Authentication, 
+Dark Web Audit, 
+Safety Score, 
+Buy Services, 
 Matrix-esque defence simulation 2D-RPG
