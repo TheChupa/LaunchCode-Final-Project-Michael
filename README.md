@@ -18,18 +18,18 @@ This project is built with:
 
 Front End:                                        
 
-React                   
-Vite                    
-JS
+React,                    
+Vite ,                    
+JS, 
 React-Bootstrap
 
 
 [WFSketch](https://drive.google.com/file/d/1H5tai3mGi7J5tr6kmmyKAt65QtDpSLfY/view?usp=drive_link)
 Back End:
 
-Java
-Spring Boot
-MySQL
+Java, 
+Spring Boot, 
+MySQL, 
 Google Gemini
 
 [ERDSketch](https://drive.google.com/file/d/1aawCsXVr2JRsy7FwASf5evcZH1dXOX2k/view?usp=drive_link)
