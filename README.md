@@ -38,7 +38,7 @@ Google Gemini
 To install and use this:
 
 Back-end will need you to update a few things. In the application.properties folder, there are several variables that will need to be set.
-
+```
 DB_HOST = Database hostname
 
 DB_PORT = Database port number
@@ -48,7 +48,7 @@ DB_NAME = Name of Database in MySQL
 DB_USER = username of the account to access MySQL
 
 DB_PASS = username password
-
+```
 
 You will also need to request a [Gemini API key](https://aistudio.google.com/apikey) and set it up in the back-end. This is required for the website to function as intended.
 
